@@ -104,7 +104,7 @@ export function AboutStats() {
         <p className="text-[13px] sm:text-[14px] text-[#6B7280] mb-4 sm:mb-5">About my self.</p>
 
         {/* Bio */}
-        <p ref={bioRef} className="text-[15px] sm:text-[17px] leading-[1.65] text-[#0A0A0A] mb-7 sm:mb-8 max-w-[620px]">
+        <p ref={bioRef} className="text-[16px] sm:text-[17px] leading-[1.65] text-[#0A0A0A] mb-7 sm:mb-8 max-w-[620px]">
           Hey, I'm Afif Ramadhan — a strategy-driven product designer{" "}
           {words.map((word, i) => {
             const start = i / words.length
