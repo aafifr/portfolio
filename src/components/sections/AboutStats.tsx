@@ -119,14 +119,14 @@ export function AboutStats() {
 
         {/* Contact row */}
         <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-10 sm:mb-11">
-          <a href="mailto:contact@afif.com" className="flex items-center gap-2 text-[13px] sm:text-[14px] font-medium text-[#0A0A0A] hover:text-[#6B7280] transition-colors">
+          <a href="mailto:afif.recs@gmail.com" className="flex items-center gap-2 text-[13px] sm:text-[14px] font-medium text-[#0A0A0A] hover:text-[#6B7280] transition-colors">
             <Mail className="w-4 h-4" />
-            contact@afif.com
+            afif.recs@gmail.com
           </a>
           <span className="text-[#D1D5DB] hidden sm:block">•</span>
-          <a href="tel:+12325458700" className="flex items-center gap-2 text-[13px] sm:text-[14px] font-medium text-[#0A0A0A] hover:text-[#6B7280] transition-colors">
+          <a href="tel:+6285121597870" className="flex items-center gap-2 text-[13px] sm:text-[14px] font-medium text-[#0A0A0A] hover:text-[#6B7280] transition-colors">
             <Phone className="w-4 h-4" />
-            +(123) 254 587 00
+            +62 851-2159-7870
           </a>
           <span className="text-[#D1D5DB] hidden sm:block">•</span>
           <a href="#" className="flex items-center gap-2 text-[13px] sm:text-[14px] font-medium text-[#0A0A0A] hover:text-[#6B7280] transition-colors">
