@@ -1,11 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
 
 interface ExperienceItem {
   id: string;
   period: string;
   role: string;
   company: string;
+  companyUrl?: string;
+  logo: string;
   description: string;
   tech: string;
 }
@@ -14,35 +17,33 @@ export const ExperienceSection: React.FC = () => {
   const experiences: ExperienceItem[] = [
     {
       id: "exp-1",
-      period: "2023 — Present",
-      role: "Senior Software Engineer",
-      company: "Helio",
-      description: "Lead front-end for a real-time analytics platform — owning the design system, performance budget, and the team's engineering standards.",
-      tech: "React · Next.js · TypeScript",
+      period: "Aug 2025 — Present",
+      role: "Fullstack Developer Intern",
+      company: "PT Cybersama Technology",
+      companyUrl: "https://cybersama.com/",
+      logo: "/images/cybersama-technology.png",
+      description: "Enhanced and maintained KasPOS (a Laravel-based restaurant POS system), delivering custom feature requests and receipt printing workflows for production readiness. Also developed custom Odoo modules and managed Linux server infrastructure.",
+      tech: "Laravel · PostgreSQL · Odoo · CyberPanel · Linux · Cloudflare",
     },
     {
       id: "exp-2",
-      period: "2021 — 2023",
-      role: "Full-Stack Engineer",
-      company: "Drift Finance",
-      description: "Built core banking flows end to end, from Postgres schema to pixel, for a consumer fintech used by half a million people.",
-      tech: "Node.js · GraphQL · AWS",
+      period: "Feb 2026 — Jul 2026",
+      role: "AI Automation Developer",
+      company: "Nurul Fikri Academy",
+      companyUrl: "https://nfacademy.id/",
+      logo: "/images/nurulfikri-academy.jpeg",
+      description: "Developed end-to-end business process automations across HR, Finance, and Marketing using n8n and LLM APIs. Architected an autonomous AI CV Sorter and interview auto-scheduler pipeline integrating Gemini and Google Calendar.",
+      tech: "n8n · Google Gemini AI · OpenAI API · Claude · JavaScript",
     },
     {
       id: "exp-3",
-      period: "2019 — 2021",
-      role: "Frontend Developer",
-      company: "Studio Veloce",
-      description: "Crafted bespoke digital products, high-conversion e-commerce platforms, and interactive brand websites for top-tier global clients.",
-      tech: "Vue.js · Tailwind · Node.js",
-    },
-    {
-      id: "exp-4",
-      period: "2017 — 2019",
-      role: "Junior Developer",
-      company: "Alpha Labs",
-      description: "Built responsive, accessible web interfaces and collaborated closely with designers to implement pixel-perfect design systems.",
-      tech: "JavaScript · React · REST APIs",
+      period: "Sep 2025 — Dec 2025",
+      role: "Fullstack Web Developer",
+      company: "Nurul Fikri Academy",
+      companyUrl: "https://nfacademy.id/",
+      logo: "/images/nurulfikri-academy.jpeg",
+      description: "Built BookUMKM, a full-stack booking and reservation platform for Indonesian MSMEs. Handled full product lifecycle from Figma UI/UX prototyping to Laravel & Inertia.js API deployment.",
+      tech: "React · Laravel · Inertia.js · Tailwind CSS · MySQL",
     },
   ];
 
@@ -59,7 +60,7 @@ export const ExperienceSection: React.FC = () => {
           </h2>
         </div>
 
-        {/* Experience Rows (Border TOP only on each item, no side/bottom borders) */}
+        {/* Experience Rows with Option 1: Left Logo Badge & Linked Company Names */}
         <div className="space-y-6 sm:space-y-8">
           {experiences.map((exp, idx) => (
             <motion.div
@@ -70,29 +71,55 @@ export const ExperienceSection: React.FC = () => {
               transition={{ delay: idx * 0.08, duration: 0.4 }}
               className="pt-8 sm:pt-10 pb-4 border-t border-[#E5E7EB] rounded-t-2xl grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start"
             >
-              {/* Left Column: Period */}
-              <div className="lg:col-span-4">
+              {/* Left Column: Company Logo (Circle, No Border) & Period */}
+              <div className="lg:col-span-4 flex items-center gap-3">
+                {exp.logo && (
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden shrink-0 bg-white">
+                    <img
+                      src={exp.logo}
+                      alt={exp.company}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
                 <span className="text-[14.5px] text-[#8E95A2] font-normal font-sans">
                   {exp.period}
                 </span>
               </div>
 
-              {/* Right Column: Role, Company, Description & Tech */}
-              <div className="lg:col-span-8 flex flex-col lg:items-end lg:text-right space-y-3.5">
-                {/* Role — Company */}
-                <h3 className="text-[19px] sm:text-[21px] font-medium text-[#111111] tracking-tight font-sans">
+              {/* Right Column: Role, Company Link, Description & Tech */}
+              <div className="lg:col-span-8 flex flex-col space-y-3.5">
+                {/* Role — Company (with subtle arrow icon & link hover) */}
+                <h3 className="text-[19px] sm:text-[21px] font-medium text-[#111111] tracking-tight font-sans lg:text-right flex flex-wrap items-center lg:justify-end gap-x-2">
                   <span>{exp.role}</span>
-                  <span className="text-[#8E95A2] font-normal ml-2">— {exp.company}</span>
+                  <span className="text-[#8E95A2] font-normal">—</span>
+                  {exp.companyUrl ? (
+                    <a
+                      href={exp.companyUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1 text-[#8E95A2] hover:text-[#111111] font-normal transition-colors group/link cursor-pointer"
+                    >
+                      <span className="group-hover/link:underline underline-offset-4 decoration-[#CBD5E1]">
+                        {exp.company}
+                      </span>
+                      <ArrowUpRight className="w-3.5 h-3.5 text-[#94A3B8] group-hover/link:text-[#111111] group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-all" />
+                    </a>
+                  ) : (
+                    <span className="text-[#8E95A2] font-normal">{exp.company}</span>
+                  )}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[#52525B] text-[15px] sm:text-[15.5px] leading-[1.65] font-normal font-sans max-w-[520px]">
+                <p className="text-[#52525B] text-[15px] sm:text-[15.5px] leading-[1.65] font-normal font-sans lg:text-right max-w-[560px] lg:ml-auto">
                   {exp.description}
                 </p>
 
-                {/* Tech Line */}
-                <div className="text-[13px] font-mono text-[#8E95A2] tracking-wide pt-1">
-                  {exp.tech}
+                {/* Tech Line: Darker text (#111111), font-medium, always right-aligned */}
+                <div className="w-full flex justify-end text-right pt-1.5">
+                  <span className="text-[13px] sm:text-[13.5px] font-medium text-[#111111] font-sans tracking-tight">
+                    {exp.tech}
+                  </span>
                 </div>
               </div>
             </motion.div>

@@ -17,6 +17,7 @@ export interface Experience {
   period: string;
   role: string;
   company: string;
+  logo?: string;
   companyUrl?: string;
   description: string;
   skills: string[];
