@@ -1,0 +1,68 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
+export const About: React.FC = () => {
+  const stats = [
+    { value: "8+", label: "YEARS EXPERIENCE" },
+    { value: "40+", label: "PROJECTS DELIVERED" },
+    { value: "12", label: "COUNTRIES WORKED WITH" },
+    { value: "∞", label: "CUPS OF COFFEE" },
+  ];
+
+  return (
+    <section id="about" className="py-[120px] px-6 sm:px-12 bg-white">
+      <div className="max-w-[1200px] mx-auto w-full">
+        {/* Top Section: Tag, Hook Headline (3-line wrap), and Right-hand Paragraphs */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-24">
+          {/* Left Column: Expanded Width for Crisp 3-Line Headline */}
+          <div className="lg:col-span-7 space-y-4">
+            {/* Exact Tag: (01) ABOUT */}
+            <span className="font-mono text-[11.5px] text-[#8E95A2] font-medium tracking-[0.18em] uppercase block">
+              (01) ABOUT
+            </span>
+
+            {/* 3-Line Headline matching reference */}
+            <h2 className="text-3xl sm:text-[38px] lg:text-[40px] font-medium tracking-[-0.035em] text-[#111111] leading-[1.16] font-sans max-w-[580px]">
+              A design-minded developer obsessed with performance, clean architecture and user experience.
+            </h2>
+          </div>
+
+          {/* Right Column: Narrative paragraphs */}
+          <div className="lg:col-span-5 space-y-6 text-[#52525B] text-[15px] sm:text-[16px] leading-[1.65] font-normal font-sans pt-1 lg:pt-8">
+            <p>
+              For the past eight years I've helped startups and product teams turn ambitious ideas into software people genuinely like to use. I care about the whole stack — the database query, the API contract, the animation curve.
+            </p>
+            <p>
+              My work sits at the intersection of engineering and design: fast, accessible, and quietly considered. No fireworks, just products that feel right.
+            </p>
+          </div>
+        </div>
+
+        {/* 4-Column Stats Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 border-t border-[#E5E7EB]">
+          {stats.map((stat, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.08, duration: 0.4 }}
+              className={`pt-[28px] px-[24px] pb-[16px] flex flex-col justify-between ${
+                idx !== stats.length - 1 ? 'lg:border-r border-[#E5E7EB]' : ''
+              } ${idx === 0 || idx === 2 ? 'border-r sm:border-r' : ''} ${
+                idx >= 2 ? 'border-t lg:border-t-0 border-[#E5E7EB]' : ''
+              }`}
+            >
+              <div className="text-4xl sm:text-[52px] lg:text-[56px] font-medium tracking-[-0.03em] text-[#111111] font-sans leading-none mb-3.5">
+                {stat.value}
+              </div>
+              <div className="text-[11px] font-mono text-[#8E95A2] tracking-[0.2em] uppercase font-medium">
+                {stat.label}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
