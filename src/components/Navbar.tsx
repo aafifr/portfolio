@@ -26,10 +26,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
         }`}
       >
         <div className="max-w-[1200px] w-full mx-auto flex items-center justify-between">
-          {/* Brand / Logo */}
+          {/* Brand / Logo - Slim Medium Style Matching Hero Heading */}
           <a
             href="#"
-            className="text-[#000000] font-bold text-[17px] sm:text-[18px] tracking-tight hover:opacity-80 transition-opacity font-sans"
+            className="text-[#111111] font-medium text-[17px] sm:text-[18px] tracking-[-0.03em] hover:opacity-80 transition-opacity font-sans"
           >
             {personalInfo.name}
           </a>
