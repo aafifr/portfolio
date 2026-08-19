@@ -17,7 +17,7 @@ export const Hero: React.FC<HeroProps> = () => {
   };
 
   return (
-    <section className="relative pt-[164px] pb-[110px] px-6 sm:px-12 overflow-hidden">
+    <section className="relative pt-[140px] sm:pt-[150px] md:pt-[164px] pb-[110px] px-6 sm:px-12 overflow-hidden">
       {/* 1200px Max-Width Inner Container matching 1200 x 560px inspector spec */}
       <div className="max-w-[1200px] mx-auto w-full flex flex-col lg:flex-row items-center lg:items-stretch lg:h-[560px] justify-between gap-10 lg:gap-[72px]">
         {/* Left Column: Exactly 688px width on desktop with vertical distribute */}
