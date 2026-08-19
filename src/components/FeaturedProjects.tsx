@@ -93,8 +93,6 @@ export const FeaturedProjects: React.FC = () => {
                   <DeviceMockup
                     type={project.mockupType}
                     image={project.image}
-                    mobileImage={project.mobileImage}
-                    url={project.id === 'mahapos' ? 'mahapos.my.id' : project.id === 'nurul-jannah' ? 'nuruljannah.web.id' : 'violink.space'}
                   />
                 </div>
               </div>

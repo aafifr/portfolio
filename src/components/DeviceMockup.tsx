@@ -12,7 +12,6 @@ interface DeviceMockupProps {
 export const DeviceMockup: React.FC<DeviceMockupProps> = ({
   type,
   image,
-  url = 'violink.space',
 }) => {
   // 1. 3D Isometric Perspective iPhone Mockup (VioLink Studio - Perfectly Fitted without Clipping)
   if (type === 'mobile') {
