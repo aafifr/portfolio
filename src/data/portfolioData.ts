@@ -17,10 +17,10 @@ export const personalInfo = {
   instagram: "https://instagram.com/aafif.r",
   location: "Indonesia (UTC+7) • Available Worldwide",
   stats: [
-    { value: "8+", label: "Years of experience" },
-    { value: "40+", label: "Projects shipped" },
-    { value: "12", label: "Happy clients & startups" },
-    { value: "99%", label: "Satisfaction rate" },
+    { value: "4+", label: "Years of experience" },
+    { value: "7+", label: "Projects completed" },
+    { value: "100%", label: "Client satisfaction" },
+    { value: "∞", label: "Cups of coffee" },
   ],
   techCategories: [
     { name: "Frontend", skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Vue.js", "Framer Motion", "Zustand", "HTML5/CSS3"] },
@@ -32,6 +32,42 @@ export const personalInfo = {
 };
 
 export const projects: Project[] = [
+  {
+    id: "violink-studio",
+    title: "VioLink Studio",
+    category: "CREATOR PLATFORM",
+    description: "An ultra-aesthetic bio-link platform for digital creators, featuring interactive glassmorphism UI, animated gradient themes, and sub-second load times. Built with real-time visitor analytics and dynamic social card previews.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    mockupType: "mobile",
+    image: "/images/project/project_violink.space.webp",
+    liveUrl: "https://www.violink.space/",
+    githubUrl: "https://github.com/aafifr",
+    featured: true,
+  },
+  {
+    id: "mahapos",
+    title: "MahaPOS",
+    category: "MINI ERP & POS",
+    description: "An offline-first digital point-of-sale and mini-ERP system engineered for Indonesian MSMEs. Features real-time multi-terminal WebSocket sync, automated inventory stock-in management, and offline transaction caching.",
+    tags: ["React", "TypeScript", "Tailwind CSS", "WebSockets", "IndexedDB"],
+    mockupType: "desktop",
+    image: "/images/project/project_mahapos.my.id.avif",
+    liveUrl: "https://mahapos.my.id/",
+    githubUrl: "https://github.com/aafifr",
+    featured: true,
+  },
+  {
+    id: "nurul-jannah",
+    title: "Nurul Jannah",
+    category: "MANAGEMENT SYSTEM",
+    description: "A comprehensive digital platform for modern mosque administration, streamlining daily prayer times, infaq financial transparency, and community agenda management with an intuitive admin workflow.",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    mockupType: "laptop",
+    image: "/images/project/project_nuruljannah.web.id.avif",
+    liveUrl: "https://nuruljannah.web.id/",
+    githubUrl: "https://github.com/aafifr",
+    featured: true,
+  },
   {
     id: "helix-analytics",
     title: "Helix Analytics",

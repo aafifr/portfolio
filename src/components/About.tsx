@@ -1,12 +1,59 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
+
+// Smooth counting animation component from 0 to target
+const MetricCounter: React.FC<{
+  target?: number;
+  suffix?: string;
+  isSymbol?: boolean;
+  symbol?: string;
+}> = ({ target = 0, suffix = '', isSymbol = false, symbol = '' }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: '-40px' });
+  const motionVal = useMotionValue(0);
+  const springVal = useSpring(motionVal, {
+    damping: 24,
+    stiffness: 70,
+  });
+
+  useEffect(() => {
+    if (inView && !isSymbol) {
+      motionVal.set(target);
+    }
+  }, [inView, motionVal, target, isSymbol]);
+
+  useEffect(() => {
+    if (isSymbol) return;
+    return springVal.on('change', (latest) => {
+      if (ref.current) {
+        ref.current.textContent = `${Math.round(latest)}${suffix}`;
+      }
+    });
+  }, [springVal, suffix, isSymbol]);
+
+  if (isSymbol) {
+    return (
+      <motion.span
+        ref={ref}
+        initial={{ opacity: 0, scale: 0.6 }}
+        animate={inView ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+        className="inline-block"
+      >
+        {symbol}
+      </motion.span>
+    );
+  }
+
+  return <span ref={ref}>0{suffix}</span>;
+};
 
 export const About: React.FC = () => {
   const stats = [
-    { value: "8+", label: "YEARS EXPERIENCE" },
-    { value: "40+", label: "PROJECTS DELIVERED" },
-    { value: "12", label: "COUNTRIES WORKED WITH" },
-    { value: "∞", label: "CUPS OF COFFEE" },
+    { target: 4, suffix: '+', label: "YEARS EXPERIENCE" },
+    { target: 7, suffix: '+', label: "PROJECTS DELIVERED" },
+    { target: 100, suffix: '%', label: "CLIENT SATISFACTION" },
+    { isSymbol: true, symbol: '∞', label: "CUPS OF COFFEE" },
   ];
 
   return (
@@ -30,7 +77,7 @@ export const About: React.FC = () => {
           {/* Right Column: Narrative paragraphs */}
           <div className="lg:col-span-5 space-y-6 text-[#52525B] text-[15px] sm:text-[16px] leading-[1.65] font-normal font-sans pt-1 lg:pt-8">
             <p>
-              For the past eight years I've helped startups and product teams turn ambitious ideas into software people genuinely like to use. I care about the whole stack — the database query, the API contract, the animation curve.
+              For the past four years I've helped startups and product teams turn ambitious ideas into software people genuinely like to use. I care about the whole stack — the database query, the API contract, the animation curve.
             </p>
             <p>
               My work sits at the intersection of engineering and design: fast, accessible, and quietly considered. No fireworks, just products that feel right.
@@ -38,7 +85,7 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        {/* 4-Column Stats Grid */}
+        {/* 4-Column Stats Grid with Animated Metric Counter */}
         <div className="grid grid-cols-2 lg:grid-cols-4 border-t border-[#E5E7EB]">
           {stats.map((stat, idx) => (
             <motion.div
@@ -54,7 +101,12 @@ export const About: React.FC = () => {
               }`}
             >
               <div className="text-4xl sm:text-[52px] lg:text-[56px] font-medium tracking-[-0.03em] text-[#111111] font-sans leading-none mb-3.5">
-                {stat.value}
+                <MetricCounter
+                  target={stat.target}
+                  suffix={stat.suffix}
+                  isSymbol={stat.isSymbol}
+                  symbol={stat.symbol}
+                />
               </div>
               <div className="text-[11px] font-mono text-[#8E95A2] tracking-[0.2em] uppercase font-medium">
                 {stat.label}

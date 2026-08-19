@@ -9,7 +9,9 @@ interface ProjectItem {
   title: string;
   description: string;
   tech: string;
-  mockupType: 'ultrawide' | 'laptop' | 'desktop' | 'mobile';
+  mockupType: 'ultrawide' | 'laptop' | 'desktop' | 'mobile' | 'browser-duo' | 'perspective-3d' | 'tablet';
+  image?: string;
+  mobileImage?: string;
   liveUrl: string;
   storyUrl: string;
 }
@@ -17,24 +19,37 @@ interface ProjectItem {
 export const FeaturedProjects: React.FC = () => {
   const projects: ProjectItem[] = [
     {
-      id: "helio-analytics",
-      category: "SAAS PLATFORM",
-      title: "Helio Analytics",
-      description: "A real-time analytics suite handling millions of events a day, rebuilt for sub-second dashboards and a calmer information hierarchy.",
-      tech: "Next.js · TypeScript · Postgres · ClickHouse",
-      mockupType: "ultrawide",
-      liveUrl: "https://helio.demo",
-      storyUrl: "#",
+      id: "violink-studio",
+      category: "CREATOR PLATFORM",
+      title: "VioLink Studio",
+      description: "An ultra-aesthetic bio-link platform for digital creators, featuring interactive glassmorphism UI, animated gradient themes, and sub-second load times. Built with real-time visitor analytics and dynamic social card previews.",
+      tech: "Next.js · TypeScript · Tailwind CSS · Framer Motion",
+      mockupType: "mobile",
+      image: "/images/project/project_violink.space.webp",
+      liveUrl: "https://www.violink.space/",
+      storyUrl: "https://www.violink.space/",
     },
     {
-      id: "drift-finance",
-      category: "FINTECH APP",
-      title: "Drift Finance",
-      description: "End-to-end product design and front-end for a consumer banking experience focused on trust, speed, and clarity.",
-      tech: "React · Node.js · GraphQL · AWS",
+      id: "nurul-jannah",
+      category: "MANAGEMENT SYSTEM",
+      title: "Nurul Jannah",
+      description: "A comprehensive digital platform for modern mosque administration, streamlining daily prayer times, infaq financial transparency, and community agenda management with an intuitive admin workflow.",
+      tech: "Next.js · React · TypeScript · Tailwind CSS",
       mockupType: "laptop",
-      liveUrl: "https://drift.demo",
-      storyUrl: "#",
+      image: "/images/project/project_nuruljannah.web.id.avif",
+      liveUrl: "https://nuruljannah.web.id/",
+      storyUrl: "https://nuruljannah.web.id/",
+    },
+    {
+      id: "mahapos",
+      category: "MINI ERP & POS",
+      title: "MahaPOS",
+      description: "An offline-first digital point-of-sale and mini-ERP system engineered for Indonesian MSMEs. Features real-time multi-terminal WebSocket sync, automated inventory stock-in management, and offline transaction caching.",
+      tech: "React · TypeScript · Tailwind CSS · WebSockets · IndexedDB",
+      mockupType: "tablet",
+      image: "/images/project/project_mahapos.my.id.avif",
+      liveUrl: "https://mahapos.my.id/",
+      storyUrl: "https://app.mahapos.my.id/",
     },
     {
       id: "nova-docs",
@@ -44,16 +59,6 @@ export const FeaturedProjects: React.FC = () => {
       tech: "Astro · Tailwind · Vector DB · OpenAI",
       mockupType: "desktop",
       liveUrl: "https://nova.demo",
-      storyUrl: "#",
-    },
-    {
-      id: "vestudio-ecommerce",
-      category: "LUXURY COMMERCE",
-      title: "Vestudio Ecommerce",
-      description: "Ultra-minimalist luxury apparel mobile e-commerce platform with 60fps gesture-based interactions and headless cart architecture.",
-      tech: "Next.js · Shopify API · Framer Motion",
-      mockupType: "mobile",
-      liveUrl: "https://vestudio.demo",
       storyUrl: "#",
     },
   ];
@@ -84,8 +89,13 @@ export const FeaturedProjects: React.FC = () => {
             >
               {/* Left Column: Mockup Container (560 x 420px) */}
               <div className="w-full lg:w-[560px] h-[340px] sm:h-[400px] lg:h-[420px] rounded-3xl bg-[#FAFAFA] border border-[#F1F5F9] overflow-hidden flex items-center justify-center p-4 sm:p-6 shrink-0 group">
-                <div className="w-full flex items-center justify-center transform group-hover:scale-[1.02] transition-transform duration-500">
-                  <DeviceMockup type={project.mockupType} />
+                <div className="w-full h-full flex items-center justify-center transform group-hover:scale-[1.02] transition-transform duration-500">
+                  <DeviceMockup
+                    type={project.mockupType}
+                    image={project.image}
+                    mobileImage={project.mobileImage}
+                    url={project.id === 'mahapos' ? 'mahapos.my.id' : project.id === 'nurul-jannah' ? 'nuruljannah.web.id' : 'violink.space'}
+                  />
                 </div>
               </div>
 
@@ -125,9 +135,11 @@ export const FeaturedProjects: React.FC = () => {
 
                   <a
                     href={project.storyUrl}
+                    target="_blank"
+                    rel="noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-white hover:bg-[#FAFAFA] text-[#111111] border border-[#E5E7EB] hover:border-neutral-300 text-[13.5px] font-medium tracking-tight active:scale-97 transition-colors duration-200 group"
                   >
-                    <span>Read the Story</span>
+                    <span>App Terminal</span>
                     <BookOpen className="w-3.5 h-3.5 text-[#64748B]" />
                   </a>
                 </div>
