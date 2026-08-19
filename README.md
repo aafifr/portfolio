@@ -40,7 +40,7 @@ npm run build
 
 ```
 ├── public/
-│   ├── profile.avif        # Profile avatar
+│   ├── profile.jpg         # Profile avatar
 │   └── cv-afif-ramadhan.pdf # Resume
 ├── src/
 │   ├── components/         # Modular UI Components

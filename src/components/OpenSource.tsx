@@ -21,7 +21,7 @@ export const OpenSource: React.FC = () => {
       stars: "1,240",
       description: "A tiny theme-aware syntax highlighter for the web.",
       tag: "TYPESCRIPT",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/aafifr",
       demoUrl: "https://demo.com",
     },
     {
@@ -30,7 +30,7 @@ export const OpenSource: React.FC = () => {
       stars: "860",
       description: "A dependency-free React hook for throttled values.",
       tag: "REACT",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/aafifr",
       demoUrl: "https://demo.com",
     },
     {
@@ -39,7 +39,7 @@ export const OpenSource: React.FC = () => {
       stars: "2,100",
       description: "A 1kb client-side router with zero config.",
       tag: "JAVASCRIPT",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/aafifr",
       demoUrl: "https://demo.com",
     },
     {
@@ -48,7 +48,7 @@ export const OpenSource: React.FC = () => {
       stars: "540",
       description: "Markdown to beautiful PDF, from the command line.",
       tag: "GO",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/aafifr",
       demoUrl: "https://demo.com",
     },
     {
@@ -57,7 +57,7 @@ export const OpenSource: React.FC = () => {
       stars: "1,730",
       description: "A visual editor and validator for cron expressions.",
       tag: "NEXT.JS",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/aafifr",
       demoUrl: "https://demo.com",
     },
     {
@@ -66,7 +66,7 @@ export const OpenSource: React.FC = () => {
       stars: "690",
       description: "Generate accessible color scales from a single hex.",
       tag: "NODE.JS",
-      githubUrl: "https://github.com",
+      githubUrl: "https://github.com/aafifr",
       demoUrl: "https://demo.com",
     },
   ];

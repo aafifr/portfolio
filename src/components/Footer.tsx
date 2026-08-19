@@ -73,7 +73,7 @@ export const Footer: React.FC<FooterProps> = () => {
               <ul className="space-y-3 text-[14px] text-[#8E95A2] font-sans">
                 <li>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/aafifr"
                     target="_blank"
                     rel="noreferrer"
                     className="hover:text-white transition-colors"
@@ -83,7 +83,7 @@ export const Footer: React.FC<FooterProps> = () => {
                 </li>
                 <li>
                   <a
-                    href="https://linkedin.com"
+                    href="https://linkedin.com/in/afifrmdhn"
                     target="_blank"
                     rel="noreferrer"
                     className="hover:text-white transition-colors"
@@ -93,12 +93,12 @@ export const Footer: React.FC<FooterProps> = () => {
                 </li>
                 <li>
                   <a
-                    href="https://x.com"
+                    href="https://instagram.com/aafif.r"
                     target="_blank"
                     rel="noreferrer"
                     className="hover:text-white transition-colors"
                   >
-                    X / Twitter
+                    Instagram
                   </a>
                 </li>
               </ul>

@@ -79,7 +79,7 @@ export const Hero: React.FC<HeroProps> = () => {
           className="w-full sm:w-[440px] lg:w-[440px] h-[480px] sm:h-[560px] lg:h-[560px] rounded-3xl overflow-hidden bg-[#E2EBE5] shrink-0"
         >
           <img
-            src="/profile.avif"
+            src="/profile.jpg"
             alt={personalInfo.name}
             className="w-full h-full object-cover object-center"
           />

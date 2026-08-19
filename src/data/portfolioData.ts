@@ -12,9 +12,9 @@ export const personalInfo = {
   aboutP1: "I believe great digital products come from the intersection of thoughtful design and solid engineering. My goal is to build interfaces that feel effortless to use while maintaining rock-solid reliability under the hood.",
   aboutP2: "When I'm not coding, I'm usually experimenting with creative web animations, contributing to open-source tools, or exploring specialty coffee.",
   email: "contact@afif.dev",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
-  twitter: "https://twitter.com",
+  github: "https://github.com/aafifr",
+  linkedin: "https://linkedin.com/in/afifrmdhn",
+  instagram: "https://instagram.com/aafif.r",
   location: "Indonesia (UTC+7) • Available Worldwide",
   stats: [
     { value: "8+", label: "Years of experience" },
