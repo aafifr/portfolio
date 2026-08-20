@@ -2,7 +2,7 @@ import React from 'react';
 import { Activity, ShieldCheck, Zap, Database, BarChart3, Sparkles, Search, Code2 } from 'lucide-react';
 
 interface DeviceMockupProps {
-  type: 'ultrawide' | 'laptop' | 'desktop' | 'mobile' | 'browser-duo' | 'perspective-3d' | 'tablet';
+  type: 'ultrawide' | 'laptop' | 'desktop' | 'mobile' | 'browser-duo' | 'perspective-3d' | 'tablet' | 'imac';
   title?: string;
   image?: string;
   mobileImage?: string;
@@ -13,22 +13,58 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
   type,
   image,
 }) => {
-  // 1. 3D Isometric Perspective iPhone Mockup (VioLink Studio - Perfectly Fitted without Clipping)
+  // 1. Apple iMac Desktop Monitor Mockup (Duanova Solusi Teknologi)
+  if (type === 'imac') {
+    return (
+      <div className="relative w-full h-full flex flex-col items-center justify-center p-2 sm:p-4 select-none group/imac">
+        {/* Soft Ambient Radial Glow */}
+        <div className="absolute inset-6 bg-gradient-to-tr from-cyan-500/10 via-blue-500/10 to-indigo-500/10 rounded-full blur-2xl opacity-60 group-hover/imac:opacity-90 transition-opacity pointer-events-none" />
+
+        {/* iMac Screen & Display Panel */}
+        <div className="relative w-full max-w-[490px] aspect-[16/10.5] sm:aspect-[16/10] rounded-t-2xl bg-[#090D16] border-[6px] sm:border-[7px] border-[#181E29] border-b-0 shadow-[0_20px_45px_-12px_rgba(0,0,0,0.28)] overflow-hidden flex flex-col">
+          {/* Webcam dot */}
+          <div className="absolute top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-neutral-800 border border-neutral-700 z-30" />
+
+          {/* Screen Content */}
+          <div className="relative flex-1 w-full overflow-hidden bg-[#0A0E1A]">
+            {image && (
+              <img
+                src={image}
+                alt="iMac display screen preview"
+                className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/imac:scale-[1.02]"
+              />
+            )}
+            {/* Glass reflection */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent pointer-events-none" />
+          </div>
+
+          {/* iMac Signature Aluminium Chin */}
+          <div className="h-6 sm:h-7 bg-gradient-to-r from-[#1C2230] via-[#2A3345] to-[#1C2230] border-t border-white/5 flex items-center justify-center shrink-0">
+            <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+          </div>
+        </div>
+
+        {/* iMac Stand Neck */}
+        <div className="w-10 sm:w-14 h-3.5 sm:h-4 bg-gradient-to-b from-[#181E29] to-[#0F141E] -mt-0.5" />
+
+        {/* iMac Flat Aluminium Base Stand */}
+        <div className="w-28 sm:w-36 h-2 sm:h-2.5 bg-gradient-to-b from-[#262F40] to-[#141A26] rounded-sm shadow-xl" />
+      </div>
+    );
+  }
+
+  // 2. 3D Isometric Perspective iPhone Mockup (VioLink Studio)
   if (type === 'mobile') {
     return (
       <div className="relative w-full h-full flex items-center justify-center p-4 sm:p-6 select-none [perspective:1200px] group/mobile">
-        {/* Soft Ambient Radial Glow Behind 3D Phone */}
         <div className="absolute w-44 sm:w-56 aspect-square bg-gradient-to-tr from-blue-600/20 via-indigo-500/20 to-purple-500/15 rounded-full blur-2xl opacity-70 group-hover/mobile:opacity-95 transition-all duration-700 pointer-events-none" />
 
-        {/* 3D Angled Phone Chassis - Proportional Height to Prevent Overflow */}
         <div className="relative w-[165px] sm:w-[180px] lg:w-[188px] aspect-[9/18.5] rounded-[2rem] sm:rounded-[2.2rem] bg-[#0E131F] border-[5px] sm:border-[6px] border-[#181F2E] shadow-[-12px_18px_36px_-6px_rgba(0,0,0,0.3),0_8px_16px_-4px_rgba(0,0,0,0.15)] overflow-hidden flex flex-col justify-between transform [transform:rotateX(8deg)_rotateY(-12deg)_rotateZ(3deg)] group-hover/mobile:[transform:rotateX(3deg)_rotateY(-5deg)_rotateZ(1deg)_scale(1.02)] transition-all duration-700 ease-out">
-          {/* Dynamic Island Notch Pill */}
           <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-12 sm:w-14 h-2.5 sm:h-3 bg-black rounded-full z-30 flex items-center justify-between px-1.5 shadow-xs">
             <div className="w-1 h-1 rounded-full bg-neutral-800" />
             <div className="w-1 h-1 rounded-full bg-emerald-500/80 animate-pulse" />
           </div>
 
-          {/* Screen Content */}
           {image ? (
             <div className="relative flex-1 w-full bg-[#0A0E1A] overflow-hidden">
               <img
@@ -36,7 +72,6 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
                 alt="Mobile project 3D preview"
                 className="w-full h-full object-cover object-top"
               />
-              {/* Subtle glass reflection overlay */}
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.06] to-transparent pointer-events-none" />
             </div>
           ) : (
@@ -66,7 +101,7 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
     );
   }
 
-  // 2. Tablet / iPad POS Terminal Mockup
+  // 3. Tablet / iPad POS Terminal Mockup
   if (type === 'tablet') {
     return (
       <div className="relative w-full h-full flex flex-col items-center justify-center p-2 sm:p-4 select-none group/tablet">
@@ -92,7 +127,7 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
     );
   }
 
-  // 3. MacBook Pro Laptop Mockup
+  // 4. MacBook Pro Laptop Mockup
   if (type === 'laptop') {
     return (
       <div className="w-full flex flex-col items-center justify-center p-2 sm:p-4 select-none">
@@ -164,7 +199,7 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
     );
   }
 
-  // 4. Ultrawide Curved Screen
+  // 5. Ultrawide Curved Screen
   if (type === 'ultrawide') {
     return (
       <div className="w-full flex flex-col items-center justify-center p-2 sm:p-4 select-none">
@@ -251,7 +286,7 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
     );
   }
 
-  // 5. Desktop Window Mockup
+  // 6. Desktop Window Mockup
   return (
     <div className="w-full flex flex-col items-center justify-center p-2 sm:p-4 select-none">
       <div className="w-full max-w-lg aspect-[16/10] rounded-xl bg-[#080B11] border-[6px] border-[#181F2C] shadow-2xl overflow-hidden relative">

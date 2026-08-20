@@ -33,6 +33,18 @@ export const personalInfo = {
 
 export const projects: Project[] = [
   {
+    id: "duanova",
+    title: "Duanova Solusi Teknologi",
+    category: "B2B PRODUCT CATALOG",
+    description: "A modern B2B digital product catalog and corporate portal for an enterprise IT system integrator. Engineered with streamlined product indexing, dynamic category filtering, and direct WhatsApp RFQ quotation workflows.",
+    tags: ["WordPress", "WooCommerce", "BeTheme", "BeBuilder", "PHP", "WhatsApp API"],
+    mockupType: "desktop",
+    image: "/images/project/project_duanova.id.avif",
+    liveUrl: "https://duanova.id/",
+    githubUrl: "https://github.com/aafifr",
+    featured: true,
+  },
+  {
     id: "violink-studio",
     title: "VioLink Studio",
     category: "CREATOR PLATFORM",

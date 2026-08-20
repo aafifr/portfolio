@@ -9,15 +9,28 @@ interface ProjectItem {
   title: string;
   description: string;
   tech: string;
-  mockupType: 'ultrawide' | 'laptop' | 'desktop' | 'mobile' | 'browser-duo' | 'perspective-3d' | 'tablet';
+  mockupType: 'ultrawide' | 'laptop' | 'desktop' | 'mobile' | 'browser-duo' | 'perspective-3d' | 'tablet' | 'imac';
   image?: string;
   mobileImage?: string;
   liveUrl: string;
   storyUrl: string;
+  secondaryButtonText?: string;
 }
 
 export const FeaturedProjects: React.FC = () => {
   const projects: ProjectItem[] = [
+    {
+      id: "duanova",
+      category: "B2B PRODUCT CATALOG",
+      title: "Duanova Solusi Teknologi",
+      description: "A modern B2B digital product catalog and corporate portal for an enterprise IT system integrator. Engineered with streamlined product indexing, dynamic category filtering, and direct WhatsApp RFQ quotation workflows.",
+      tech: "WordPress · WooCommerce · BeTheme · BeBuilder · PHP · WhatsApp API",
+      mockupType: "imac",
+      image: "/images/project/project_duanova.id.avif",
+      liveUrl: "https://duanova.id/",
+      storyUrl: "https://duanova.id/tentang",
+      secondaryButtonText: "About Company",
+    },
     {
       id: "violink-studio",
       category: "CREATOR PLATFORM",
@@ -50,16 +63,7 @@ export const FeaturedProjects: React.FC = () => {
       image: "/images/project/project_mahapos.my.id.avif",
       liveUrl: "https://mahapos.my.id/",
       storyUrl: "https://app.mahapos.my.id/",
-    },
-    {
-      id: "nova-docs",
-      category: "AI PLATFORM",
-      title: "Nova Docs",
-      description: "Next-generation developer documentation engine featuring autonomous semantic AI search and instant interactive code playgrounds.",
-      tech: "Astro · Tailwind · Vector DB · OpenAI",
-      mockupType: "desktop",
-      liveUrl: "https://nova.demo",
-      storyUrl: "#",
+      secondaryButtonText: "App Terminal",
     },
   ];
 
@@ -137,7 +141,7 @@ export const FeaturedProjects: React.FC = () => {
                     rel="noreferrer"
                     className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-white hover:bg-[#FAFAFA] text-[#111111] border border-[#E5E7EB] hover:border-neutral-300 text-[13.5px] font-medium tracking-tight active:scale-97 transition-colors duration-200 group"
                   >
-                    <span>App Terminal</span>
+                    <span>{project.secondaryButtonText || "Read the Story"}</span>
                     <BookOpen className="w-3.5 h-3.5 text-[#64748B]" />
                   </a>
                 </div>
