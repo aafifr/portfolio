@@ -31,6 +31,19 @@ export function App() {
   });
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
+
+  // Force scroll position to top whenever view changes (critical for mobile viewports)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [currentView]);
+
+  useEffect(() => {
     const handlePopState = () => {
       if (window.location.pathname === '/projects' || window.location.hash === '#projects-archive') {
         setCurrentView('projects');
@@ -50,7 +63,9 @@ export function App() {
     if (window.location.pathname !== '/projects') {
       window.history.pushState({ view: 'projects' }, '', '/projects');
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   };
 
   const navigateToContact = () => {
@@ -58,7 +73,9 @@ export function App() {
     if (window.location.pathname !== '/contact') {
       window.history.pushState({ view: 'contact' }, '', '/contact');
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   };
 
   const navigateToHome = (targetSectionId?: string) => {
@@ -74,7 +91,9 @@ export function App() {
         }
       }, 50);
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
     }
   };
 

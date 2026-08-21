@@ -9,7 +9,7 @@ interface FeaturedProjectsProps {
 }
 
 export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onViewAllProjects }) => {
-  const featuredProjects = projects.filter((p) => p.featured);
+  const featuredProjects = projects.filter((p) => p.featured).slice(0, 4);
 
   return (
     <section id="projects" className="pt-10 pb-[130px] px-6 sm:px-12 bg-white">

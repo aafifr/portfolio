@@ -64,12 +64,19 @@ export const AllProjectsPage: React.FC<AllProjectsPageProps> = ({ onBackToHome }
     });
   }, [searchQuery, selectedCategory]);
 
+  // Ensure scroll position resets to top on initial page mount (especially on mobile)
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white text-[#111111] pt-[120px] sm:pt-[140px] pb-[130px] px-6 sm:px-12">
+    <div className="min-h-screen bg-white text-[#111111] pt-[105px] sm:pt-[140px] pb-[100px] sm:pb-[130px] px-5 sm:px-12">
       <div className="max-w-[1200px] mx-auto w-full">
         
         {/* Top Back Navigation Bar */}
-        <div className="mb-10 sm:mb-12">
+        <div className="mb-8 sm:mb-12">
           <button
             onClick={onBackToHome}
             className="group inline-flex items-center gap-2 text-[13.5px] sm:text-[14px] font-medium text-[#64748B] hover:text-[#111111] transition-colors py-2 px-3 -ml-3 rounded-full hover:bg-neutral-100/80 cursor-pointer"
@@ -378,19 +385,15 @@ export const AllProjectsPage: React.FC<AllProjectsPageProps> = ({ onBackToHome }
           </div>
         )}
 
-        {/* Bottom Back Button */}
-        <div className="mt-20 pt-10 border-t border-[#E5E7EB] flex items-center justify-between">
+        {/* Bottom Return to Home Navigation Bar */}
+        <div className="mt-16 sm:mt-20 pt-8 sm:pt-10 border-t border-[#E5E7EB] flex items-center justify-start">
           <button
             onClick={onBackToHome}
-            className="group inline-flex items-center gap-2 text-[14px] font-medium text-[#111111] hover:text-[#2563EB] transition-colors py-2 px-4 rounded-full bg-[#FAFAFA] hover:bg-[#F4F4F5] border border-[#E5E7EB] cursor-pointer"
+            className="group inline-flex items-center gap-2 text-[13.5px] sm:text-[14px] font-medium text-[#111111] hover:text-[#2563EB] transition-colors py-2.5 sm:py-2 px-5 rounded-full bg-[#FAFAFA] hover:bg-[#F4F4F5] border border-[#E5E7EB] cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
             <span>Return to Portfolio Home</span>
           </button>
-
-          <span className="text-[13px] font-mono text-[#8E95A2]">
-            © {new Date().getFullYear()} Afif Ramadhan
-          </span>
         </div>
       </div>
     </div>
