@@ -54,7 +54,7 @@ export const FAQ: React.FC = () => {
         {/* Left Column: Tag & Heading (Exactly 360px on desktop) */}
         <div className="w-full lg:w-[360px] shrink-0">
           <span className="font-mono text-[11.5px] text-[#8E95A2] font-medium tracking-[0.18em] uppercase block mb-3">
-            (07) FAQ
+            (08) FAQ
           </span>
           <h2 className="text-3xl sm:text-[38px] lg:text-[40px] font-medium tracking-[-0.035em] text-[#111111] leading-[1.15] font-sans">
             Frequently asked.

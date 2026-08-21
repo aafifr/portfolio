@@ -5,10 +5,14 @@ export interface Project {
   description: string;
   longDescription?: string;
   tags: string[];
-  mockupType: 'ultrawide' | 'laptop' | 'desktop' | 'mobile';
-  image: string;
-  liveUrl?: string;
+  mockupType: 'ultrawide' | 'laptop' | 'desktop' | 'mobile' | 'browser-duo' | 'perspective-3d' | 'tablet' | 'imac';
+  image?: string;
+  mobileImage?: string;
+  liveUrl: string;
+  storyUrl?: string;
   githubUrl?: string;
+  secondaryButtonText?: string;
+  year?: string;
   featured: boolean;
 }
 
@@ -21,6 +25,7 @@ export interface Experience {
   companyUrl?: string;
   description: string;
   skills: string[];
+  certificateUrl?: string;
 }
 
 export interface OpenSourceRepo {
@@ -46,6 +51,32 @@ export interface FAQItem {
   id: string;
   question: string;
   answer: string;
+}
+
+export interface CertificationItem {
+  id: string;
+  title: string;
+  issuer: string;
+  credentialId?: string;
+  period: string;
+  description: string;
+  skills?: string[];
+  certificateUrl?: string;
+  type: 'certification' | 'training';
+}
+
+export interface AwardItem {
+  id: string;
+  title: string;
+  event: string;
+  issuer: string;
+  year: string;
+  badge: string;
+  description: string;
+  skills?: string[];
+  certificateUrl?: string;
+  artworkUrl?: string;
+  artworkButtonText?: string;
 }
 
 export interface TechItem {

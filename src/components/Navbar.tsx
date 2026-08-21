@@ -4,19 +4,66 @@ import { personalInfo } from '../data/portfolioData';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 interface NavbarProps {
-  onOpenContact: () => void;
+  onOpenContact?: () => void;
+  currentView?: 'home' | 'projects' | 'contact';
+  onNavigateHome?: (targetSectionId?: string) => void;
+  onNavigateProjects?: () => void;
+  onNavigateContact?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
+export const Navbar: React.FC<NavbarProps> = ({ 
+  onOpenContact,
+  currentView = 'home',
+  onNavigateHome,
+  onNavigateProjects,
+  onNavigateContact,
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Blog', href: '#opensource' },
-    { name: 'Contact', href: '#faq' },
+    { name: 'About', href: '#about', sectionId: 'about' },
+    { name: 'Experience', href: '#experience', sectionId: 'experience' },
+    { name: 'Projects', href: '#projects', sectionId: 'projects' },
+    { name: 'Credentials', href: '#credentials', sectionId: 'credentials' },
+    { name: 'Blog', href: '#opensource', sectionId: 'opensource' },
+    { name: 'Contact', href: '/contact', sectionId: 'contact' },
   ];
+
+  const handleLinkClick = (e: React.MouseEvent, link: { name: string; href: string; sectionId: string }) => {
+    if (link.name === 'Contact') {
+      e.preventDefault();
+      if (currentView === 'contact') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (onNavigateContact) {
+        onNavigateContact();
+      }
+      setMobileMenuOpen(false);
+      return;
+    }
+
+    if (link.name === 'Projects' && onNavigateProjects) {
+      if (currentView === 'projects') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      // handled
+    }
+
+    if (currentView !== 'home') {
+      e.preventDefault();
+      if (onNavigateHome) {
+        onNavigateHome(link.sectionId);
+      }
+      setMobileMenuOpen(false);
+    }
+  };
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (currentView !== 'home' && onNavigateHome) {
+      e.preventDefault();
+      onNavigateHome();
+    }
+  };
 
   return (
     <>
@@ -29,6 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
           {/* Brand / Logo - Slim Medium Style Matching Hero Heading */}
           <a
             href="#"
+            onClick={handleLogoClick}
             className="text-[#111111] font-medium text-[17px] sm:text-[18px] tracking-[-0.03em] hover:opacity-80 transition-opacity font-sans"
           >
             {personalInfo.name}
@@ -41,7 +89,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-[14px] font-normal text-[#64748B] hover:text-[#000000] transition-colors font-sans"
+                  onClick={(e) => handleLinkClick(e, link)}
+                  className={`text-[14px] font-normal transition-colors font-sans ${
+                    (currentView === 'projects' && link.name === 'Projects') ||
+                    (currentView === 'contact' && link.name === 'Contact')
+                      ? 'text-[#111111] font-medium'
+                      : 'text-[#64748B] hover:text-[#000000]'
+                  }`}
                 >
                   {link.name}
                 </a>
@@ -50,7 +104,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
 
             {/* Let's Talk CTA Button */}
             <button
-              onClick={onOpenContact}
+              onClick={() => {
+                if (onNavigateContact) {
+                  onNavigateContact();
+                } else if (onOpenContact) {
+                  onOpenContact();
+                }
+              }}
               className="group inline-flex items-center justify-center gap-1.5 px-6 py-2.5 rounded-full text-[13.5px] font-medium text-white bg-[#111111] hover:bg-[#2563EB] active:scale-97 transition-colors duration-200 cursor-pointer ml-1 font-sans"
             >
               <span>Let's Talk</span>
@@ -85,8 +145,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                   <a
                     key={link.name}
                     href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="px-3.5 py-2.5 rounded-xl text-[15px] font-medium text-neutral-800 hover:bg-neutral-50 hover:text-neutral-950 transition-colors"
+                    onClick={(e) => {
+                      setMobileMenuOpen(false);
+                      handleLinkClick(e, link);
+                    }}
+                    className={`px-3.5 py-2.5 rounded-xl text-[15px] font-medium transition-colors ${
+                      (currentView === 'projects' && link.name === 'Projects') ||
+                      (currentView === 'contact' && link.name === 'Contact')
+                        ? 'bg-neutral-100 text-neutral-950 font-semibold'
+                        : 'text-neutral-800 hover:bg-neutral-50 hover:text-neutral-950'
+                    }`}
                   >
                     {link.name}
                   </a>
@@ -96,7 +164,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                   <button
                     onClick={() => {
                       setMobileMenuOpen(false);
-                      onOpenContact();
+                      if (onNavigateContact) {
+                        onNavigateContact();
+                      } else if (onOpenContact) {
+                        onOpenContact();
+                      }
                     }}
                     className="w-full flex items-center justify-center gap-2 py-3 px-5 rounded-full bg-[#111111] hover:bg-[#2563EB] text-white text-[13.5px] font-medium active:scale-98 transition-colors"
                   >

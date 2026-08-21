@@ -5,7 +5,7 @@ interface FooterProps {
   onOpenContact?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = () => {
+export const Footer: React.FC<FooterProps> = ({ onOpenContact }) => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -23,13 +23,28 @@ export const Footer: React.FC<FooterProps> = () => {
               Full-stack developer building considered digital products for startups and teams worldwide.
             </p>
 
-            <div className="pt-1">
-              <a
-                href={`mailto:${personalInfo.email}`}
-                className="text-[14px] text-[#8E95A2] hover:text-white transition-colors inline-block font-sans"
-              >
-                {personalInfo.email}
-              </a>
+            <div className="pt-1 space-y-1.5">
+              <div>
+                <a
+                  href={`mailto:${personalInfo.email}`}
+                  className="text-[14px] text-[#8E95A2] hover:text-white transition-colors inline-block font-sans"
+                >
+                  {personalInfo.email}
+                </a>
+              </div>
+              <div>
+                <a
+                  href={personalInfo.whatsapp}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[13.5px] text-[#8E95A2] hover:text-emerald-400 transition-colors inline-flex items-center gap-1.5 font-sans"
+                >
+                  <span>{personalInfo.phone}</span>
+                  <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-white/10 text-neutral-300">
+                    WA
+                  </span>
+                </a>
+              </div>
             </div>
 
             <div className="pt-2">
@@ -58,8 +73,27 @@ export const Footer: React.FC<FooterProps> = () => {
                   </a>
                 </li>
                 <li>
+                  <a href="#credentials" className="hover:text-white transition-colors">
+                    Credentials
+                  </a>
+                </li>
+                <li>
                   <a href="#opensource" className="hover:text-white transition-colors">
                     Blog
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="/contact"
+                    onClick={(e) => {
+                      if (onOpenContact) {
+                        e.preventDefault();
+                        onOpenContact();
+                      }
+                    }}
+                    className="hover:text-white transition-colors"
+                  >
+                    Contact
                   </a>
                 </li>
               </ul>
@@ -71,6 +105,16 @@ export const Footer: React.FC<FooterProps> = () => {
                 SOCIAL
               </span>
               <ul className="space-y-3 text-[14px] text-[#8E95A2] font-sans">
+                <li>
+                  <a
+                    href={personalInfo.whatsapp}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-emerald-400 transition-colors inline-flex items-center gap-1.5"
+                  >
+                    <span>WhatsApp</span>
+                  </a>
+                </li>
                 <li>
                   <a
                     href="https://github.com/aafifr"

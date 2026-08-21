@@ -76,7 +76,7 @@ export const Testimonials: React.FC = () => {
       {/* Header Container aligned to 1200px max-width */}
       <div className="max-w-[1200px] mx-auto w-full px-6 sm:px-12 mb-12">
         <span className="font-mono text-[11.5px] text-[#8E95A2] font-medium tracking-[0.18em] uppercase block">
-          (06) TESTIMONIALS
+          (07) TESTIMONIALS
         </span>
       </div>
 

@@ -77,7 +77,7 @@ export const OpenSource: React.FC = () => {
         {/* Section Tag & Heading */}
         <div className="mb-14 sm:mb-16">
           <span className="font-mono text-[11.5px] text-[#8E95A2] font-medium tracking-[0.18em] uppercase block mb-3">
-            (05) ON THE SIDE
+            (06) ON THE SIDE
           </span>
           <h2 className="text-3xl sm:text-[38px] lg:text-[40px] font-medium tracking-[-0.035em] text-[#111111] leading-[1.15] font-sans">
             Open-source experiments & tools.

@@ -12,7 +12,67 @@ interface DeviceMockupProps {
 export const DeviceMockup: React.FC<DeviceMockupProps> = ({
   type,
   image,
+  mobileImage,
+  url,
 }) => {
+  // 0. Browser Duo Mockup (Refined Studio Composition: Desktop Browser + Layered Floating Smartphone)
+  if (type === 'browser-duo') {
+    const displayUrl = url ? url.replace(/^https?:\/\//, '').replace(/\/$/, '') : 'preview.app';
+    return (
+      <div className="relative w-full h-full flex items-center justify-center p-2 sm:p-4 select-none group/duo [perspective:1000px]">
+        {/* Soft Ambient Radial Glow */}
+        <div className="absolute inset-2 sm:inset-4 bg-gradient-to-tr from-indigo-500/15 via-blue-600/10 to-teal-500/10 rounded-full blur-3xl opacity-70 group-hover/duo:opacity-95 transition-opacity pointer-events-none" />
+
+        {/* Desktop Browser Window (Balanced Offset: Shifted slightly left & up) */}
+        <div className="relative w-[86%] sm:w-[84%] max-w-[420px] aspect-[16/10.2] rounded-xl bg-[#090D16] border-[4px] sm:border-[5px] border-[#1C2230] shadow-[0_16px_40px_-10px_rgba(0,0,0,0.32)] overflow-hidden flex flex-col -translate-x-3 sm:-translate-x-5 -translate-y-2 sm:-translate-y-3 transition-transform duration-700 ease-out group-hover/duo:-translate-y-4">
+          {/* Browser Header Bar */}
+          <div className="h-6 sm:h-6.5 bg-[#121722] border-b border-white/[0.08] px-2.5 flex items-center gap-2 shrink-0">
+            <div className="flex gap-1.2">
+              <div className="w-2 h-2 rounded-full bg-[#FF5F56]/90" />
+              <div className="w-2 h-2 rounded-full bg-[#FFBD2E]/90" />
+              <div className="w-2 h-2 rounded-full bg-[#27C93F]/90" />
+            </div>
+            <div className="flex-1 max-w-[180px] sm:max-w-[210px] mx-auto bg-black/40 rounded px-2 py-0.5 text-[9px] font-mono text-neutral-400 text-center truncate border border-white/5">
+              {displayUrl}
+            </div>
+          </div>
+
+          {/* Desktop Screen Preview */}
+          <div className="relative flex-1 w-full overflow-hidden bg-[#0A0E1A]">
+            {image && (
+              <img
+                src={image}
+                alt="Desktop platform view"
+                className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/duo:scale-[1.02]"
+              />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.03] to-transparent pointer-events-none" />
+          </div>
+        </div>
+
+        {/* Floating Mobile Smartphone (Apple Frame, Subtle Angle & Contact Shadow) */}
+        <div className="absolute bottom-2 sm:bottom-3 right-2 sm:right-4 w-[112px] sm:w-[130px] aspect-[9/18.8] rounded-[1.6rem] sm:rounded-[1.8rem] bg-[#0E131F] border-[4px] sm:border-[4.5px] border-[#181F2E] shadow-[-16px_20px_45px_-8px_rgba(0,0,0,0.5),0_8px_16px_rgba(0,0,0,0.2)] overflow-hidden flex flex-col justify-between z-20 transform rotate-[-2.5deg] group-hover/duo:rotate-0 group-hover/duo:translate-y-[-4px] group-hover/duo:scale-[1.03] transition-all duration-700 ease-out">
+          {/* Dynamic Island / Notch */}
+          <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-9 sm:w-11 h-2.5 bg-black rounded-full z-30 flex items-center justify-between px-1.5 shadow-xs">
+            <div className="w-0.5 h-0.5 rounded-full bg-neutral-800" />
+            <div className="w-0.5 h-0.5 rounded-full bg-emerald-500/80" />
+          </div>
+
+          {/* Mobile Screen Preview */}
+          <div className="relative flex-1 w-full overflow-hidden bg-[#0A0E1A]">
+            {(mobileImage || image) && (
+              <img
+                src={mobileImage || image}
+                alt="Mobile interface preview"
+                className="w-full h-full object-cover object-top"
+              />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.06] to-transparent pointer-events-none" />
+          </div>
+        </div>
+      </div>
+    );
+  }
   // 1. Apple iMac Desktop Monitor Mockup (Duanova Solusi Teknologi)
   if (type === 'imac') {
     return (

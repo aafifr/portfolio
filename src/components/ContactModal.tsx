@@ -180,14 +180,23 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                     <Send className="w-4 h-4" />
                   </button>
 
-                  <div className="text-center">
-                    <span className="text-[11px] text-neutral-400">
-                      Or email directly at{' '}
+                  <div className="text-center space-y-1">
+                    <span className="text-[11.5px] text-neutral-500 block">
+                      Or reach out directly via{' '}
                       <a
                         href={`mailto:${personalInfo.email}`}
-                        className="text-neutral-900 font-semibold underline"
+                        className="text-neutral-900 font-semibold underline hover:text-blue-600 transition-colors"
                       >
                         {personalInfo.email}
+                      </a>{' '}
+                      or{' '}
+                      <a
+                        href={personalInfo.whatsapp}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-emerald-600 font-semibold underline hover:text-emerald-700 transition-colors"
+                      >
+                        WhatsApp ({personalInfo.phone})
                       </a>
                     </span>
                   </div>
