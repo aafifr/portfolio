@@ -35,18 +35,14 @@ export function App() {
     }
   }, []);
 
-  // Force scroll position to top whenever view changes (critical for mobile viewports)
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-  }, [currentView]);
-
+  // Keep navigation in sync with browser URL history without page reload
   useEffect(() => {
     const handlePopState = () => {
-      if (window.location.pathname === '/projects' || window.location.hash === '#projects-archive') {
+      const path = window.location.pathname;
+      const hash = window.location.hash;
+      if (path === '/projects' || hash === '#projects-archive') {
         setCurrentView('projects');
-      } else if (window.location.pathname === '/contact' || window.location.hash === '#contact') {
+      } else if (path === '/contact' || hash === '#contact') {
         setCurrentView('contact');
       } else {
         setCurrentView('home');
@@ -58,70 +54,48 @@ export function App() {
   }, []);
 
   const navigateToProjects = () => {
+    window.history.pushState(null, '', '/projects');
     setCurrentView('projects');
-    if (window.location.pathname !== '/projects') {
-      window.history.pushState({ view: 'projects' }, '', '/projects');
-    }
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const navigateToContact = () => {
+    window.history.pushState(null, '', '/contact');
     setCurrentView('contact');
-    if (window.location.pathname !== '/contact') {
-      window.history.pushState({ view: 'contact' }, '', '/contact');
-    }
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const navigateToHome = (targetSectionId?: string) => {
+  const navigateToHome = () => {
+    window.history.pushState(null, '', '/');
     setCurrentView('home');
-    if (window.location.pathname !== '/') {
-      window.history.pushState({ view: 'home' }, '', '/');
-    }
-    if (targetSectionId) {
-      setTimeout(() => {
-        const el = document.getElementById(targetSectionId);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 50);
-    } else {
-      window.scrollTo(0, 0);
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900 selection:bg-neutral-900 selection:text-white flex flex-col font-sans">
-      {/* Sticky Navigation */}
+    <div className="min-h-screen bg-white text-[#111111] antialiased selection:bg-neutral-900 selection:text-white font-sans">
+      {/* Sticky Global Navigation Bar */}
       <Navbar
+        onOpenContact={() => setIsContactOpen(true)}
         currentView={currentView}
         onNavigateHome={navigateToHome}
         onNavigateProjects={navigateToProjects}
         onNavigateContact={navigateToContact}
-        onOpenContact={() => setIsContactOpen(true)}
       />
 
-      {/* Main Content */}
-      <main className="flex-1">
+      <main>
         {currentView === 'projects' ? (
-          <AllProjectsPage onBackToHome={() => navigateToHome()} />
+          <AllProjectsPage onBackToHome={navigateToHome} />
         ) : currentView === 'contact' ? (
-          <ContactPage onBackToHome={() => navigateToHome()} />
+          <ContactPage onBackToHome={navigateToHome} />
         ) : (
           <>
             {/* Hero Section */}
-            <Hero onOpenContact={navigateToContact} />
+            <Hero onOpenContact={() => setIsContactOpen(true)} />
 
-            {/* Tech Marquee Bar */}
+            {/* Marquee Bar: Tech Stack & Cloud Infrastructure */}
             <TechMarquee />
 
-            {/* Section (01) About & Stats */}
+            {/* Section (01) Narrative & Stats */}
             <About />
 
             {/* Section (02) Stack Tools */}

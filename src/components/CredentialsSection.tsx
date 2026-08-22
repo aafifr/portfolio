@@ -5,13 +5,9 @@ import { InstagramLogo } from './BrandLogos';
 import { certifications, awards } from '../data/portfolioData';
 
 export const CredentialsSection: React.FC = () => {
-  // Default open first item in each column as visual affordance
-  const [expandedCerts, setExpandedCerts] = useState<Record<string, boolean>>({
-    'cert-bnsp-web': true,
-  });
-  const [expandedAwards, setExpandedAwards] = useState<Record<string, boolean>>({
-    'award-poster-uny': true,
-  });
+  // Default all cards closed for a clean, scannable overview
+  const [expandedCerts, setExpandedCerts] = useState<Record<string, boolean>>({});
+  const [expandedAwards, setExpandedAwards] = useState<Record<string, boolean>>({});
 
   const toggleCert = (id: string) => {
     setExpandedCerts((prev) => ({
@@ -138,9 +134,16 @@ export const CredentialsSection: React.FC = () => {
                               {cert.description}
                             </p>
 
-                            {cert.skills && (
-                              <div className="text-[12px] sm:text-[12.5px] font-mono text-[#8E95A2] tracking-wide pt-0.5">
-                                {cert.skills.join(' · ')}
+                            {cert.skills && cert.skills.length > 0 && (
+                              <div className="flex flex-wrap gap-1.5 pt-1">
+                                {cert.skills.map((skill, sIdx) => (
+                                  <span
+                                    key={sIdx}
+                                    className="text-[11.5px] font-medium text-[#52525B] px-2.5 py-0.5 rounded-md bg-[#F8F9FA] border border-[#E5E7EB]"
+                                  >
+                                    {skill}
+                                  </span>
+                                ))}
                               </div>
                             )}
                           </motion.div>
@@ -266,9 +269,16 @@ export const CredentialsSection: React.FC = () => {
                               {award.description}
                             </p>
 
-                            {award.skills && (
-                              <div className="text-[12px] sm:text-[12.5px] font-mono text-[#8E95A2] tracking-wide pt-0.5">
-                                {award.skills.join(' · ')}
+                            {award.skills && award.skills.length > 0 && (
+                              <div className="flex flex-wrap gap-1.5 pt-1">
+                                {award.skills.map((skill, sIdx) => (
+                                  <span
+                                    key={sIdx}
+                                    className="text-[11.5px] font-medium text-[#52525B] px-2.5 py-0.5 rounded-md bg-[#F8F9FA] border border-[#E5E7EB]"
+                                  >
+                                    {skill}
+                                  </span>
+                                ))}
                               </div>
                             )}
                           </motion.div>
