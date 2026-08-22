@@ -33,16 +33,12 @@ export const AllProjectsPage: React.FC<AllProjectsPageProps> = ({ onBackToHome }
   const getCategoryLabel = (cat: string) => {
     switch (cat) {
       case 'All': return 'All Projects';
-      case 'B2B & BOOKING PLATFORM': return 'Booking & B2B';
-      case 'B2B PRODUCT CATALOG': return 'B2B & Enterprise';
-      case 'CREATOR PLATFORM': return 'Creator & Mobile';
-      case 'MANAGEMENT SYSTEM': return 'Management';
-      case 'MINI ERP & POS': return 'POS & Mini ERP';
-      case 'SAAS & TELEMETRY': return 'SaaS';
-      case 'FINTECH & TRADING': return 'Fintech';
-      case 'AI & RECRUITMENT AUTOMATION': return 'AI & Automation';
-      case 'AI PLATFORM & TOOLS': return 'AI Tools';
-      case 'DESIGN & E-COMMERCE': return 'E-Commerce';
+      case 'CREATOR BIO-LINK SAAS': return 'Creator SaaS';
+      case 'POINT-OF-SALE (POS) SAAS': return 'POS SaaS';
+      case 'MULTI-TENANT BOOKING SAAS': return 'Booking SaaS';
+      case 'AI & RECRUITMENT AUTOMATION': return 'AI Automation';
+      case 'B2B ENTERPRISE PORTAL': return 'B2B Enterprise';
+      case 'INSTITUTIONAL MANAGEMENT SYSTEM': return 'Management';
       default: return cat;
     }
   };
