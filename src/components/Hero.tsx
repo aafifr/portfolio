@@ -81,6 +81,10 @@ export const Hero: React.FC<HeroProps> = () => {
           <img
             src="/profile.avif"
             alt={personalInfo.name}
+            width={440}
+            height={560}
+            fetchPriority="high"
+            decoding="async"
             className="w-full h-full object-cover object-center"
           />
         </motion.div>

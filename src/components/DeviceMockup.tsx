@@ -43,6 +43,8 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
               <img
                 src={image}
                 alt="Desktop platform view"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-left-top transition-transform duration-700 ease-out group-hover/duo:scale-[1.02]"
               />
             )}
@@ -64,6 +66,8 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
               <img
                 src={mobileImage || image}
                 alt="Mobile interface preview"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-top"
               />
             )}
@@ -91,6 +95,8 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
               <img
                 src={image}
                 alt="iMac display screen preview"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/imac:scale-[1.02]"
               />
             )}
@@ -130,6 +136,8 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
               <img
                 src={image}
                 alt="Mobile project 3D preview"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.06] to-transparent pointer-events-none" />
@@ -175,6 +183,8 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
               <img
                 src={image}
                 alt="POS Terminal screen preview"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/tablet:scale-[1.02]"
               />
             )}
@@ -201,6 +211,8 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
               <img
                 src={image}
                 alt="MacBook project preview"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/laptop:scale-[1.02]"
               />
             </div>
@@ -373,6 +385,8 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
             <img
               src={image}
               alt="Project preview"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-contain object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-black/[0.01] to-transparent pointer-events-none" />

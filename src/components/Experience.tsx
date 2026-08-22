@@ -82,6 +82,8 @@ export const ExperienceSection: React.FC = () => {
                     <img
                       src={exp.logo}
                       alt={exp.company}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </div>
