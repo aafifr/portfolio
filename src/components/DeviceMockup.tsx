@@ -24,7 +24,7 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
         <div className="absolute inset-2 sm:inset-4 bg-gradient-to-tr from-indigo-500/15 via-blue-600/10 to-teal-500/10 rounded-full blur-3xl opacity-70 group-hover/duo:opacity-95 transition-opacity pointer-events-none" />
 
         {/* Desktop Browser Window (Balanced Offset: Shifted slightly left & up) */}
-        <div className="relative w-[86%] sm:w-[84%] max-w-[420px] aspect-[16/10.2] rounded-xl bg-[#090D16] border-[4px] sm:border-[5px] border-[#1C2230] shadow-[0_16px_40px_-10px_rgba(0,0,0,0.32)] overflow-hidden flex flex-col -translate-x-3 sm:-translate-x-5 -translate-y-2 sm:-translate-y-3 transition-transform duration-700 ease-out group-hover/duo:-translate-y-4">
+        <div className="relative w-[86%] sm:w-[84%] max-w-[420px] aspect-[16/10.2] rounded-xl bg-[#090D16] border-[4px] sm:border-[5px] border-[#1C2230] shadow-[0_16px_40px_-10px_rgba(0,0,0,0.32)] overflow-hidden flex flex-col -translate-x-4 sm:-translate-x-6 -translate-y-2 sm:-translate-y-3 transition-transform duration-700 ease-out group-hover/duo:-translate-y-4">
           {/* Browser Header Bar */}
           <div className="h-6 sm:h-6.5 bg-[#121722] border-b border-white/[0.08] px-2.5 flex items-center gap-2 shrink-0">
             <div className="flex gap-1.2">
@@ -43,15 +43,15 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
               <img
                 src={image}
                 alt="Desktop platform view"
-                className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/duo:scale-[1.02]"
+                className="w-full h-full object-cover object-left-top transition-transform duration-700 ease-out group-hover/duo:scale-[1.02]"
               />
             )}
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.03] to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-transparent pointer-events-none" />
           </div>
         </div>
 
-        {/* Floating Mobile Smartphone (Apple Frame, Subtle Angle & Contact Shadow) */}
-        <div className="absolute bottom-2 sm:bottom-3 right-2 sm:right-4 w-[112px] sm:w-[130px] aspect-[9/18.8] rounded-[1.6rem] sm:rounded-[1.8rem] bg-[#0E131F] border-[4px] sm:border-[4.5px] border-[#181F2E] shadow-[-16px_20px_45px_-8px_rgba(0,0,0,0.5),0_8px_16px_rgba(0,0,0,0.2)] overflow-hidden flex flex-col justify-between z-20 transform rotate-[-2.5deg] group-hover/duo:rotate-0 group-hover/duo:translate-y-[-4px] group-hover/duo:scale-[1.03] transition-all duration-700 ease-out">
+        {/* Floating Mobile Smartphone (Apple Frame, Clean Angle & Deep Realistic Shadow) */}
+        <div className="absolute bottom-1 sm:bottom-2 right-1 sm:right-3 w-[112px] sm:w-[130px] aspect-[9/18.8] rounded-[1.6rem] sm:rounded-[1.8rem] bg-[#0E131F] border-[4px] sm:border-[4.5px] border-[#181F2E] shadow-[-22px_16px_40px_-6px_rgba(0,0,0,0.65),0_12px_24px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col justify-between z-20 transform rotate-[-2.5deg] group-hover/duo:rotate-0 group-hover/duo:translate-y-[-4px] group-hover/duo:scale-[1.03] transition-all duration-700 ease-out">
           {/* Dynamic Island / Notch */}
           <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-9 sm:w-11 h-2.5 bg-black rounded-full z-30 flex items-center justify-between px-1.5 shadow-xs">
             <div className="w-0.5 h-0.5 rounded-full bg-neutral-800" />
@@ -67,7 +67,7 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
                 className="w-full h-full object-cover object-top"
               />
             )}
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.06] to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.03] to-transparent pointer-events-none" />
           </div>
         </div>
       </div>
@@ -342,6 +342,42 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({
 
         <div className="w-10 sm:w-16 h-4 sm:h-6 bg-gradient-to-b from-[#1E293B] to-[#0F172A] -mt-1 rounded-b-sm" />
         <div className="w-24 sm:w-36 h-1.5 sm:h-2 bg-[#1E293B] rounded-full shadow-lg" />
+      </div>
+    );
+  }
+
+  // 6. Desktop Window / Workflow Canvas Mockup (Optimized for 4:3 & 16:10 Architecture Showcases)
+  if (image) {
+    const displayUrl = 'app.n8n.cloud/workflow/ai-cv-sorter';
+    return (
+      <div className="relative w-full h-full flex items-center justify-center p-3 sm:p-5 select-none group/desktop">
+        {/* Soft Ambient Radial Glow */}
+        <div className="absolute inset-6 bg-gradient-to-tr from-indigo-500/10 via-blue-600/10 to-teal-500/10 rounded-full blur-3xl opacity-60 group-hover/desktop:opacity-90 transition-opacity pointer-events-none" />
+
+        {/* Studio Window Frame (Proportional Scale with Comfortable Breathing Space) */}
+        <div className="relative w-[92%] sm:w-[86%] max-w-[400px] sm:max-w-[420px] rounded-2xl bg-white border-[4px] sm:border-[4.5px] border-[#E2E8F0] shadow-[0_16px_40px_-10px_rgba(0,0,0,0.1),0_4px_10px_rgba(0,0,0,0.03)] overflow-hidden flex flex-col transition-transform duration-700 ease-out group-hover/desktop:scale-[1.02]">
+          {/* Light Header Bar */}
+          <div className="h-6 sm:h-6.5 bg-[#F8FAFC] border-b border-[#E2E8F0] px-3 flex items-center gap-2 shrink-0">
+            <div className="flex gap-1.5">
+              <div className="w-2 h-2 rounded-full bg-[#FF5F56]/90" />
+              <div className="w-2 h-2 rounded-full bg-[#FFBD2E]/90" />
+              <div className="w-2 h-2 rounded-full bg-[#27C93F]/90" />
+            </div>
+            <div className="flex-1 max-w-[190px] sm:max-w-[220px] mx-auto bg-white rounded px-2.5 py-0.5 text-[9px] font-mono text-[#64748B] text-center truncate border border-[#E2E8F0] shadow-xs">
+              {displayUrl}
+            </div>
+          </div>
+
+          {/* Screen Image Preview (Full 4:3 canvas visible from top to bottom) */}
+          <div className="relative w-full aspect-[4/3] overflow-hidden bg-white">
+            <img
+              src={image}
+              alt="Project preview"
+              className="w-full h-full object-contain object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-black/[0.01] to-transparent pointer-events-none" />
+          </div>
+        </div>
       </div>
     );
   }

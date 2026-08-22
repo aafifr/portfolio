@@ -44,7 +44,7 @@ export const Hero: React.FC<HeroProps> = () => {
 
             {/* Subtitle / Bio */}
             <p className="text-[16px] sm:text-[17px] text-[#64748B] leading-[1.65] max-w-[470px] font-normal font-sans pt-1">
-              I’m a full-stack engineer with eight years building SaaS platforms, startup products, and scalable web applications — from first commit to production at scale.
+              A visual-minded full-stack engineer with 4+ years crafting robust web applications, clean architectures, and pixel-perfect digital experiences.
             </p>
           </div>
 
@@ -71,7 +71,7 @@ export const Hero: React.FC<HeroProps> = () => {
           </div>
         </motion.div>
 
-        {/* Right Column: Exactly 440px width x 560px height image container */}
+        {/* Right Column: Exactly 440px width x 560px height clean profile image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}

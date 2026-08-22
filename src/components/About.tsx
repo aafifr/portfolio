@@ -50,10 +50,10 @@ const MetricCounter: React.FC<{
 
 export const About: React.FC = () => {
   const stats = [
-    { target: 4, suffix: '+', label: "YEARS EXPERIENCE" },
-    { target: 7, suffix: '+', label: "PROJECTS DELIVERED" },
-    { target: 100, suffix: '%', label: "CLIENT SATISFACTION" },
-    { isSymbol: true, symbol: '∞', label: "CUPS OF COFFEE" },
+    { target: 4, suffix: '+', label: "YEARS OF JOURNEY" },
+    { target: 6, suffix: '+', label: "PRODUCTION APPS" },
+    { target: 100, suffix: '%', label: "DETAIL OBSESSED" },
+    { isSymbol: true, symbol: '∞', label: "GLASSES OF MILK" },
   ];
 
   return (
@@ -70,17 +70,17 @@ export const About: React.FC = () => {
 
             {/* 3-Line Headline matching reference */}
             <h2 className="text-3xl sm:text-[38px] lg:text-[40px] font-medium tracking-[-0.035em] text-[#111111] leading-[1.16] font-sans max-w-[580px]">
-              A design-minded developer obsessed with performance, clean architecture and user experience.
+              A visual-minded full-stack engineer obsessed with clean aesthetics, solid architecture, and user experience.
             </h2>
           </div>
 
           {/* Right Column: Narrative paragraphs */}
           <div className="lg:col-span-5 space-y-6 text-[#52525B] text-[15px] sm:text-[16px] leading-[1.65] font-normal font-sans pt-1 lg:pt-8">
             <p>
-              For the past four years I've helped startups and product teams turn ambitious ideas into software people genuinely like to use. I care about the whole stack — the database query, the API contract, the animation curve.
+              For the past four years, I've engineered end-to-end web applications with a perfectionist's eye for detail. Grounded in rigorous software development and an academic foundation in Information Systems, I care deeply about the whole craft: database schemas, API contracts, responsive layouts, and fluid micro-interactions.
             </p>
             <p>
-              My work sits at the intersection of engineering and design: fast, accessible, and quietly considered. No fireworks, just products that feel right.
+              My work sits right at the intersection of full-stack engineering, modern UI design, and intelligent automations. I view AI not as a shortcut, but as a superpower to make web applications faster, smarter, and genuinely delightful to use.
             </p>
           </div>
         </div>

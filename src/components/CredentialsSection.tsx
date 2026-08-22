@@ -73,7 +73,7 @@ export const CredentialsSection: React.FC = () => {
                     transition={{ delay: idx * 0.08, duration: 0.4 }}
                     className="p-6 sm:p-7 rounded-2xl bg-white border border-[#E5E7EB] hover:border-neutral-400 transition-all flex flex-col justify-between space-y-4 group"
                   >
-                    <div className="space-y-3">
+                    <div className="space-y-3.5">
                       {/* Header: Index, Badge & Period */}
                       <div className="flex items-center justify-between gap-3 flex-wrap">
                         <div className="flex items-center gap-2">
@@ -81,8 +81,8 @@ export const CredentialsSection: React.FC = () => {
                             0{idx + 1}
                           </span>
                           <span className="text-[#CBD5E1]">•</span>
-                          <span className="font-mono text-[11px] uppercase tracking-wider text-[#111111] font-semibold">
-                            {cert.type === 'certification' ? 'BNSP • NATIONAL LICENSE' : 'RESIDENTIAL IT PROGRAM'}
+                          <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#111111] font-medium">
+                            {cert.type === 'certification' ? 'BNSP · NATIONAL LICENSE' : 'RESIDENTIAL IT IMMERSION'}
                           </span>
                         </div>
 
@@ -98,10 +98,10 @@ export const CredentialsSection: React.FC = () => {
                       >
                         <div className="flex items-start justify-between gap-2">
                           <div>
-                            <h3 className="text-[18px] sm:text-[19px] font-medium text-[#111111] tracking-tight font-sans group-hover/title:text-blue-600 transition-colors">
+                            <h3 className="text-[18.5px] sm:text-[19.5px] font-medium text-[#111111] tracking-tight font-sans group-hover/title:text-blue-600 transition-colors">
                               {cert.title}
                             </h3>
-                            <p className="text-[13.5px] text-[#64748B] font-sans mt-0.5">
+                            <p className="text-[13.5px] sm:text-[14px] text-[#64748B] font-normal font-sans mt-0.5">
                               {cert.issuer}
                             </p>
                             {cert.credentialId && (
@@ -135,14 +135,14 @@ export const CredentialsSection: React.FC = () => {
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                            className="overflow-hidden space-y-3 pt-1 border-t border-[#F8F9FA]"
+                            className="overflow-hidden space-y-3 pt-2 border-t border-[#F8F9FA]"
                           >
-                            <p className="text-[14px] text-[#52525B] leading-[1.65] font-sans">
+                            <p className="text-[14.5px] sm:text-[15px] text-[#52525B] leading-[1.65] font-normal font-sans">
                               {cert.description}
                             </p>
 
                             {cert.skills && (
-                              <div className="text-[12px] font-mono text-[#8E95A2] tracking-wide pt-0.5">
+                              <div className="text-[12px] sm:text-[12.5px] font-mono text-[#8E95A2] tracking-wide pt-0.5">
                                 {cert.skills.join(' · ')}
                               </div>
                             )}
@@ -153,12 +153,12 @@ export const CredentialsSection: React.FC = () => {
 
                     {/* Bottom Action Link (Always Visible) */}
                     {cert.certificateUrl && (
-                      <div className="pt-3 border-t border-[#F1F5F9] flex items-center justify-between">
+                      <div className="pt-3.5 border-t border-[#F1F5F9] flex items-center justify-between">
                         <a
                           href={cert.certificateUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-1.5 text-[12.5px] font-medium text-[#111111] hover:text-[#2563EB] transition-colors group/link"
+                          className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[#111111] hover:text-[#2563EB] transition-colors group/link"
                         >
                           <Award className="w-3.5 h-3.5 text-[#64748B] group-hover/link:text-[#2563EB] transition-colors" />
                           <span>View Certificate Document</span>
@@ -206,7 +206,7 @@ export const CredentialsSection: React.FC = () => {
                     transition={{ delay: idx * 0.08, duration: 0.4 }}
                     className="p-6 sm:p-7 rounded-2xl bg-white border border-[#E5E7EB] hover:border-neutral-400 transition-all flex flex-col justify-between space-y-4 group"
                   >
-                    <div className="space-y-3">
+                    <div className="space-y-3.5">
                       {/* Header: Index, Badge & Year */}
                       <div className="flex items-center justify-between gap-3 flex-wrap">
                         <div className="flex items-center gap-2">
@@ -214,7 +214,7 @@ export const CredentialsSection: React.FC = () => {
                             0{idx + 1}
                           </span>
                           <span className="text-[#CBD5E1]">•</span>
-                          <span className="font-mono text-[11px] uppercase tracking-wider text-[#111111] font-semibold">
+                          <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#111111] font-medium">
                             {award.badge.toUpperCase()}
                           </span>
                         </div>
@@ -231,10 +231,10 @@ export const CredentialsSection: React.FC = () => {
                       >
                         <div className="flex items-start justify-between gap-2">
                           <div>
-                            <h3 className="text-[18px] sm:text-[19px] font-medium text-[#111111] tracking-tight font-sans group-hover/title:text-blue-600 transition-colors">
+                            <h3 className="text-[18.5px] sm:text-[19.5px] font-medium text-[#111111] tracking-tight font-sans group-hover/title:text-blue-600 transition-colors">
                               {award.title}
                             </h3>
-                            <p className="text-[13.5px] text-[#64748B] font-sans mt-0.5">
+                            <p className="text-[13.5px] sm:text-[14px] text-[#64748B] font-normal font-sans mt-0.5">
                               {award.event} • {award.issuer}
                             </p>
                           </div>
@@ -263,14 +263,14 @@ export const CredentialsSection: React.FC = () => {
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                            className="overflow-hidden space-y-3 pt-1 border-t border-[#F8F9FA]"
+                            className="overflow-hidden space-y-3 pt-2 border-t border-[#F8F9FA]"
                           >
-                            <p className="text-[14px] text-[#52525B] leading-[1.65] font-sans">
+                            <p className="text-[14.5px] sm:text-[15px] text-[#52525B] leading-[1.65] font-normal font-sans">
                               {award.description}
                             </p>
 
                             {award.skills && (
-                              <div className="text-[12px] font-mono text-[#8E95A2] tracking-wide pt-0.5">
+                              <div className="text-[12px] sm:text-[12.5px] font-mono text-[#8E95A2] tracking-wide pt-0.5">
                                 {award.skills.join(' · ')}
                               </div>
                             )}
@@ -280,14 +280,14 @@ export const CredentialsSection: React.FC = () => {
                     </div>
 
                     {/* Bottom Action Links (Always Visible) */}
-                    <div className="pt-3 border-t border-[#F1F5F9] flex flex-wrap items-center justify-between gap-2">
+                    <div className="pt-3.5 border-t border-[#F1F5F9] flex flex-wrap items-center justify-between gap-2">
                       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                         {award.certificateUrl && (
                           <a
                             href={award.certificateUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center gap-1.5 text-[12.5px] font-medium text-[#111111] hover:text-[#2563EB] transition-colors group/link"
+                            className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[#111111] hover:text-[#2563EB] transition-colors group/link"
                           >
                             <Trophy className="w-3.5 h-3.5 text-[#64748B] group-hover/link:text-[#2563EB] transition-colors" />
                             <span>View Certificate</span>
@@ -300,7 +300,7 @@ export const CredentialsSection: React.FC = () => {
                             href={award.artworkUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center gap-1.5 text-[12.5px] font-medium text-[#111111] hover:text-[#E1306C] transition-colors group/link"
+                            className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[#111111] hover:text-[#E1306C] transition-colors group/link"
                           >
                             <InstagramLogo className="w-3.5 h-3.5 text-[#E1306C]" />
                             <span>{award.artworkButtonText || "View Artwork"}</span>

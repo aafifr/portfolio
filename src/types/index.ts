@@ -11,6 +11,7 @@ export interface Project {
   liveUrl: string;
   storyUrl?: string;
   githubUrl?: string;
+  primaryButtonText?: string;
   secondaryButtonText?: string;
   year?: string;
   featured: boolean;

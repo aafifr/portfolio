@@ -11,7 +11,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { GitHubLogo } from './BrandLogos';
-import { projects } from '../data/portfolioData';
+import { projects, getProjectCardTheme } from '../data/portfolioData';
 import { DeviceMockup } from './DeviceMockup';
 
 interface AllProjectsPageProps {
@@ -40,6 +40,7 @@ export const AllProjectsPage: React.FC<AllProjectsPageProps> = ({ onBackToHome }
       case 'MINI ERP & POS': return 'POS & Mini ERP';
       case 'SAAS & TELEMETRY': return 'SaaS';
       case 'FINTECH & TRADING': return 'Fintech';
+      case 'AI & RECRUITMENT AUTOMATION': return 'AI & Automation';
       case 'AI PLATFORM & TOOLS': return 'AI Tools';
       case 'DESIGN & E-COMMERCE': return 'E-Commerce';
       default: return cat;
@@ -207,25 +208,31 @@ export const AllProjectsPage: React.FC<AllProjectsPageProps> = ({ onBackToHome }
         ) : viewMode === 'grid' ? (
           /* Grid View Cards */
           <div className="space-y-16 sm:space-y-20">
-            {filteredProjects.map((project, idx) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.05, duration: 0.4 }}
-                className="w-full flex flex-col lg:flex-row items-center lg:items-stretch lg:h-[420px] justify-between gap-8 lg:gap-[72px]"
-              >
-                {/* Left Column: Device Mockup Container */}
-                <div className="w-full lg:w-[560px] h-[340px] sm:h-[400px] lg:h-[420px] rounded-3xl bg-[#FAFAFA] border border-[#F1F5F9] overflow-hidden flex items-center justify-center p-4 sm:p-6 shrink-0 group">
-                  <div className="w-full h-full flex items-center justify-center transform group-hover:scale-[1.02] transition-transform duration-500">
-                    <DeviceMockup
-                      type={project.mockupType}
-                      image={project.image}
-                      mobileImage={project.mobileImage}
-                      url={project.liveUrl}
-                    />
+            {filteredProjects.map((project, idx) => {
+              const theme = getProjectCardTheme(project.id);
+
+              return (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: idx * 0.05, duration: 0.4 }}
+                  className="w-full flex flex-col lg:flex-row items-center lg:items-stretch lg:h-[420px] justify-between gap-8 lg:gap-[72px]"
+                >
+                  {/* Left Column: Device Mockup Container with Dynamic Tinted Background */}
+                  <div className={`relative w-full lg:w-[560px] h-[340px] sm:h-[400px] lg:h-[420px] rounded-3xl ${theme.bg} border ${theme.border} overflow-hidden flex items-center justify-center p-4 sm:p-6 shrink-0 group transition-all duration-500 shadow-[0_4px_25px_-5px_rgba(0,0,0,0.03)]`}>
+                    {/* Soft Ambient Flare */}
+                    <div className={`absolute -inset-10 bg-gradient-to-tr ${theme.glow} rounded-full blur-2xl opacity-60 group-hover:opacity-100 transition-opacity pointer-events-none`} />
+
+                    <div className="relative w-full h-full flex items-center justify-center transform group-hover:scale-[1.02] transition-transform duration-500 z-10">
+                      <DeviceMockup
+                        type={project.mockupType}
+                        image={project.image}
+                        mobileImage={project.mobileImage}
+                        url={project.liveUrl}
+                      />
+                    </div>
                   </div>
-                </div>
 
                 {/* Right Column: Project Information */}
                 <div className="w-full lg:w-[568px] my-auto flex flex-col justify-center space-y-4">
@@ -267,7 +274,7 @@ export const AllProjectsPage: React.FC<AllProjectsPageProps> = ({ onBackToHome }
                       rel="noreferrer"
                       className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3 rounded-full bg-[#111111] hover:bg-[#2563EB] text-white text-[13.5px] font-medium tracking-tight active:scale-97 transition-colors duration-200 group"
                     >
-                      <span>Visit Live</span>
+                      <span>{project.primaryButtonText || "Visit Live"}</span>
                       <ArrowUpRight className="w-3.5 h-3.5 text-neutral-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </a>
 
@@ -297,7 +304,8 @@ export const AllProjectsPage: React.FC<AllProjectsPageProps> = ({ onBackToHome }
                   </div>
                 </div>
               </motion.div>
-            ))}
+            );
+          })}
           </div>
         ) : (
           /* Table / Compact Archive View */
