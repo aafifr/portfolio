@@ -1,51 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useAnimationFrame, useMotionValue } from 'framer-motion';
-
-interface TestimonialItem {
-  id: string;
-  quote: string;
-  name: string;
-  role: string;
-  company: string;
-  avatar: string;
-}
+import { User } from 'lucide-react';
+import { testimonials } from '../data/portfolioData';
 
 export const Testimonials: React.FC = () => {
-  const testimonials: TestimonialItem[] = [
-    {
-      id: "sofia",
-      quote: "Thoughtful, fast, and genuinely kind to collaborate with. The kind of partner who makes the work better and the process calmer.",
-      name: "Sofia Lindqvist",
-      role: "Design Lead",
-      company: "Atlas",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
-    },
-    {
-      id: "mara",
-      quote: "One of the rare engineers who can hold the whole product in their head — the architecture, the pixels, and the business. Everything shipped felt inevitable.",
-      name: "Mara Vance",
-      role: "VP of Product",
-      company: "Helio",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
-    },
-    {
-      id: "daniel",
-      quote: "He turned a tangled legacy front end into something our whole team is proud to work in. Performance and polish, without the drama.",
-      name: "Daniel Okoro",
-      role: "CTO",
-      company: "Drift",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
-    },
-    {
-      id: "elena",
-      quote: "An extraordinary talent who brings precision engineering and thoughtful aesthetic sensibility to everything he builds.",
-      name: "Elena Rostova",
-      role: "Founder",
-      company: "Studio Veloce",
-      avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80",
-    },
-  ];
-
   // Repeat sequence for continuous loop
   const list = [...testimonials, ...testimonials, ...testimonials, ...testimonials];
 
@@ -76,7 +34,7 @@ export const Testimonials: React.FC = () => {
       {/* Header Container aligned to 1200px max-width */}
       <div className="max-w-[1200px] mx-auto w-full px-6 sm:px-12 mb-12">
         <span className="font-mono text-[11.5px] text-[#8E95A2] font-medium tracking-[0.18em] uppercase block">
-          (07) TESTIMONIALS
+          (06) TESTIMONIALS
         </span>
       </div>
 
@@ -102,14 +60,20 @@ export const Testimonials: React.FC = () => {
 
               {/* Author Info */}
               <div className="flex items-center gap-3.5 pt-4">
-                <img
-                  src={item.avatar}
-                  alt={item.name}
-                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover border border-neutral-100 shrink-0"
-                />
+                {item.avatar ? (
+                  <img
+                    src={item.avatar}
+                    alt={item.author}
+                    className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover object-top border border-[#E2E8F0] shrink-0"
+                  />
+                ) : (
+                  <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#F1F5F9] border border-[#E2E8F0] flex items-center justify-center shrink-0">
+                    <User className="w-5 h-5 text-[#64748B]" />
+                  </div>
+                )}
                 <div>
                   <h4 className="text-[14px] sm:text-[14.5px] font-medium text-[#111111] font-sans">
-                    {item.name}
+                    {item.author}
                   </h4>
                   <p className="text-[12px] sm:text-[12.5px] text-[#8E95A2] font-normal font-sans">
                     {item.role} · {item.company}

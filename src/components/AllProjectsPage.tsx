@@ -95,7 +95,7 @@ export const AllProjectsPage: React.FC<AllProjectsPageProps> = ({ onBackToHome }
           <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-medium tracking-[-0.035em] text-[#111111] leading-[1.08] font-sans max-w-[800px]">
             All Projects & Experiments.
           </h1>
-          <p className="text-[16px] sm:text-[17px] text-[#64748B] font-normal font-sans leading-[1.65] max-w-[620px] mt-4">
+          <p className="text-[15px] sm:text-[16px] text-[#52525B] font-normal font-sans leading-[1.65] max-w-[620px] mt-4">
             A comprehensive archive of production web applications, SaaS platforms, client digital solutions, and developer tooling I’ve designed and shipped.
           </p>
         </div>

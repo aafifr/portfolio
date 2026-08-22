@@ -9,7 +9,6 @@ import { FeaturedProjects } from './components/FeaturedProjects';
 import { AllProjectsPage } from './components/AllProjectsPage';
 import { ContactPage } from './components/ContactPage';
 import { CredentialsSection } from './components/CredentialsSection';
-import { OpenSource } from './components/OpenSource';
 import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
@@ -137,13 +136,10 @@ export function App() {
             {/* Section (05) Credentials & Recognition */}
             <CredentialsSection />
 
-            {/* Section (06) Open Source Tools & Repos */}
-            <OpenSource />
-
-            {/* Section (07) Testimonials */}
+            {/* Section (06) Testimonials */}
             <Testimonials />
 
-            {/* Section (08) FAQ Accordion */}
+            {/* Section (07) FAQ Accordion */}
             <FAQ />
           </>
         )}

@@ -1,18 +1,21 @@
 import React, { useRef, useState } from 'react';
 import { motion, useAnimationFrame, useMotionValue } from 'framer-motion';
 import {
-  FigmaLogo,
+  ReactLogo,
+  NextjsLogo,
+  TypeScriptLogo,
+  TailwindLogo,
+  LaravelLogo,
   SupabaseLogo,
-  RaycastLogo,
-  LinearLogo,
-  FramerLogo,
-  PlanetScaleLogo,
-  VercelLogo,
-  StripeLogo,
+  PostgreSQLLogo,
   PrismaLogo,
-  OpenAILogo,
+  N8nLogo,
+  VercelLogo,
   GitHubLogo,
+  FigmaLogo,
+  CloudflareLogo,
   NotionLogo,
+  OpenAILogo,
 } from './BrandLogos';
 
 export const TechMarquee: React.FC = () => {
@@ -23,18 +26,21 @@ export const TechMarquee: React.FC = () => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   const brandLogos = [
-    { Component: FigmaLogo, name: "Figma" },
+    { Component: NextjsLogo, name: "Next.js" },
+    { Component: ReactLogo, name: "React" },
+    { Component: TypeScriptLogo, name: "TypeScript" },
+    { Component: TailwindLogo, name: "Tailwind CSS" },
+    { Component: LaravelLogo, name: "Laravel" },
     { Component: SupabaseLogo, name: "Supabase" },
-    { Component: RaycastLogo, name: "Raycast" },
-    { Component: LinearLogo, name: "Linear" },
-    { Component: FramerLogo, name: "Framer" },
-    { Component: PlanetScaleLogo, name: "PlanetScale" },
-    { Component: VercelLogo, name: "Vercel" },
-    { Component: StripeLogo, name: "Stripe" },
+    { Component: PostgreSQLLogo, name: "PostgreSQL" },
     { Component: PrismaLogo, name: "Prisma" },
-    { Component: OpenAILogo, name: "OpenAI" },
+    { Component: N8nLogo, name: "n8n" },
+    { Component: VercelLogo, name: "Vercel" },
     { Component: GitHubLogo, name: "GitHub" },
+    { Component: FigmaLogo, name: "Figma" },
+    { Component: CloudflareLogo, name: "Cloudflare" },
     { Component: NotionLogo, name: "Notion" },
+    { Component: OpenAILogo, name: "OpenAI" },
   ];
 
   // Repeat sequence 4 times for seamless infinite wrap
@@ -69,7 +75,7 @@ export const TechMarquee: React.FC = () => {
       {/* Subtle Section Label */}
       <div className="text-center mb-10">
         <span className="text-[11px] font-mono tracking-[0.2em] text-neutral-400 font-semibold uppercase">
-          TRUSTED BY TEAMS BUILDING AT
+          POWERED BY MODERN TOOLS & CLOUD PLATFORMS
         </span>
       </div>
 

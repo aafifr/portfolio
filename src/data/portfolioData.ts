@@ -227,28 +227,36 @@ export const openSourceRepos: OpenSourceRepo[] = [
 
 export const testimonials: Testimonial[] = [
   {
-    id: "test-1",
-    quote: "Afif possesses a rare blend of exceptional design intuition and deep architectural engineering skills. He transformed our complex analytics product into an intuitive, lightning-fast experience.",
-    author: "Marcus Vance",
-    role: "VP of Product",
-    company: "PulseScale",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+    id: "duanova-bayu",
+    quote: "Afif has a sharp eye for visual polish and solid architecture. The web portal he built was responsive, lightning-fast, and remarkably easy for our team to manage.",
+    author: "Bayu Wicaksono",
+    role: "Operations Lead",
+    company: "Duanova Solusi Teknologi",
+    avatar: "/images/testimonial/operations-lead-duanova.png",
   },
   {
-    id: "test-2",
-    quote: "Working with Afif was seamless from day one. He delivered a flawless design system and built our core platform ahead of schedule with remarkable attention to detail and zero regressions.",
-    author: "Elena Rostova",
-    role: "Founder & CEO",
-    company: "Lumina Health",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80",
+    id: "nuruljannah-wiwit",
+    quote: "The digital management system Afif built brought clarity and real-time financial transparency to our community operations. Extremely intuitive and dependable.",
+    author: "Wiwit Sulistyanto",
+    role: "Secretary & Administrator",
+    company: "DKM Nurul Jannah",
+    avatar: "/images/testimonial/wiwit-sulistyanto.png",
   },
   {
-    id: "test-3",
-    quote: "Afif doesn't just write code; he thinks like a product owner. His attention to micro-interactions and performance optimization elevated our user engagement by more than 60%.",
-    author: "David Chen",
-    role: "CTO",
-    company: "Drift Labs",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+    id: "nfa-hafidz",
+    quote: "A fast learner with strong engineering discipline. His AI CV Sorter pipeline built with n8n and LLMs showed exceptional architectural maturity and practical execution.",
+    author: "Hafidz Atamim",
+    role: "Lead Technical Mentor",
+    company: "Nurul Fikri Academy",
+    avatar: "/images/testimonial/hafidz-atamim.png",
+  },
+  {
+    id: "mahapos-rizal",
+    quote: "MahaPOS made our daily sales tracking and cashier operations at Oobee Nusantara effortless. The offline-first capability and quick receipt flow keep our counter running smoothly even during rush hours.",
+    author: "Muhammad Rizal",
+    role: "Operations & Co-Founder",
+    company: "Oobee Nusantara",
+    avatar: "/images/testimonial/muhammad-rizal.png",
   },
 ];
 
@@ -306,28 +314,33 @@ export const awards: AwardItem[] = [
 export const faqs: FAQItem[] = [
   {
     id: "faq-1",
-    question: "What is your typical project process?",
-    answer: "I follow a structured 4-stage iterative process: 1) Discovery & Architecture (aligning on goals, scope, and technical stack), 2) Design & Prototyping (wireframing and interactive UI flows), 3) Agile Development (clean, modular code with regular milestone demos), and 4) Polish & Launch (performance tuning, cross-browser verification, SEO, and deployment).",
+    question: "What types of projects or roles do you take on?",
+    answer: "I specialize in end-to-end full-stack web applications, business process automations, and modern client digital solutions. I am actively available for remote full-time positions, WFH setups, freelance client projects, and high-impact contract roles worldwide.",
   },
   {
     id: "faq-2",
-    question: "What technologies do you specialize in?",
-    answer: "My core expertise lies in the modern TypeScript ecosystem: React, Next.js, Tailwind CSS, and Framer Motion on the frontend; Node.js, Express/NestJS, PostgreSQL, Prisma, and Redis on the backend. I also have deep experience with Docker, cloud deployment on AWS/Vercel, and UI/UX design in Figma.",
+    question: "What is your core technology stack?",
+    answer: "My primary frontend stack is React, Next.js, TypeScript, Tailwind CSS, and Inertia.js. On the backend and data layer, I work with Laravel, PHP, Node.js, PostgreSQL, Supabase, and MySQL. For intelligent automations and AI pipelines, I build with n8n, Groq (Llama-3), and LLM APIs.",
   },
   {
     id: "faq-3",
-    question: "Are you available for freelance contracts or full-time roles?",
-    answer: "Yes! I am currently open to select freelance consulting, long-term contract roles, and high-impact full-time positions with forward-thinking engineering teams worldwide.",
+    question: "How do you approach a project from start to finish?",
+    answer: "I follow a transparent, milestone-driven workflow: 1) Requirements discovery & UI prototyping in Figma, 2) Clean modular coding with regular progress demos, and 3) Production cloud deployment, testing, performance optimization, and clear documentation.",
   },
   {
     id: "faq-4",
-    question: "How do we get started on a project?",
-    answer: "You can click the 'Get in Touch' button or send an email to afifr5092@gmail.com. We can schedule a 30-minute discovery call to discuss your goals, timeline, and deliverables, followed by a formal project proposal.",
+    question: "Can you integrate AI or workflow automation into existing apps?",
+    answer: "Yes! I design autonomous pipelines using n8n and LLM APIs (Groq, Gemini, OpenAI) that connect directly with your databases, REST APIs, email systems, and Airtable/Notion to eliminate manual operational bottlenecks.",
   },
   {
     id: "faq-5",
-    question: "What are your pricing rates and engagement models?",
-    answer: "I work on both fixed-price milestone projects (ideal for defined MVPs, redesigns, and new product builds) and monthly retainer / time-and-materials for ongoing agile engineering. Let's discuss your project requirements to find the best fit.",
+    question: "How do you handle remote communication and time zones?",
+    answer: "I am 100% remote and WFH ready (based in Indonesia, UTC+7) with flexible overlap hours for global teams. I maintain proactive communication through Slack, GitHub, WhatsApp, and email with regular progress updates and quick turnaround times.",
+  },
+  {
+    id: "faq-6",
+    question: "Can you join an existing team or codebase?",
+    answer: "Absolutely. I seamlessly integrate with established engineering teams, quickly adopting your Git workflows, coding conventions, design systems, and pull request reviews from day one.",
   },
 ];
 

@@ -39,9 +39,6 @@ export const CredentialsSection: React.FC = () => {
           <h2 className="text-3xl sm:text-[38px] lg:text-[40px] font-medium tracking-[-0.035em] text-[#111111] leading-[1.15] font-sans">
             Verified standards & creative honors.
           </h2>
-          <p className="text-[16px] sm:text-[17px] text-[#64748B] font-normal font-sans leading-[1.65] max-w-[620px] mt-3">
-            A balanced record of national professional competencies, pre-university software engineering immersion, and design competition accolades.
-          </p>
         </div>
 
         {/* 2-Column Equal-Rhythm Grid */}

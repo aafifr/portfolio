@@ -70,7 +70,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onBackToHome }) => {
             </h1>
 
             {/* Sub-headline description */}
-            <p className="text-[16px] sm:text-[17px] text-[#64748B] font-normal font-sans leading-[1.65] max-w-[480px]">
+            <p className="text-[15px] sm:text-[16px] text-[#52525B] font-normal font-sans leading-[1.65] max-w-[480px]">
               Have a project in mind, a role to fill, or just want to say hello? Drop a message and I’ll get back to you within a couple of days.
             </p>
 

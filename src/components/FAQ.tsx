@@ -1,48 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus } from 'lucide-react';
-
-interface FAQItem {
-  id: string;
-  question: string;
-  answer: string;
-}
+import { faqs } from '../data/portfolioData';
 
 export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const faqs: FAQItem[] = [
-    {
-      id: 'faq-1',
-      question: 'Who do you work with?',
-      answer:
-        'I partner with early-stage to growth-stage startups, product studios, and engineering teams looking for a seasoned full-stack engineer with strong product and design instincts.',
-    },
-    {
-      id: 'faq-2',
-      question: 'What technologies do you use?',
-      answer:
-        'My primary stack is TypeScript, React, Next.js, Node.js, Postgres, and Tailwind CSS. I also have deep experience with GraphQL, Go, Supabase, AWS, Docker, and Framer Motion.',
-    },
-    {
-      id: 'faq-3',
-      question: 'How long does a project take?',
-      answer:
-        'Timelines typically range from 2 to 8 weeks depending on scope. I work in focused sprints with transparent weekly milestones and continuous deployment.',
-    },
-    {
-      id: 'faq-4',
-      question: 'Do you work remotely?',
-      answer:
-        'Yes, I work 100% remotely with teams across US, European, and Asian time zones with dedicated overlap hours for synchronous syncs.',
-    },
-    {
-      id: 'faq-5',
-      question: 'Can you join an existing team?',
-      answer:
-        'Absolutely. I seamlessly integrate with established engineering teams, adopting your existing Git workflows, CI/CD pipelines, and design systems from day one.',
-    },
-  ];
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -54,7 +16,7 @@ export const FAQ: React.FC = () => {
         {/* Left Column: Tag & Heading (Exactly 360px on desktop) */}
         <div className="w-full lg:w-[360px] shrink-0">
           <span className="font-mono text-[11.5px] text-[#8E95A2] font-medium tracking-[0.18em] uppercase block mb-3">
-            (08) FAQ
+            (07) FAQ
           </span>
           <h2 className="text-3xl sm:text-[38px] lg:text-[40px] font-medium tracking-[-0.035em] text-[#111111] leading-[1.15] font-sans">
             Frequently asked.
