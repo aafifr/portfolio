@@ -35,6 +35,17 @@ export function App() {
     }
   }, []);
 
+  // Update dynamic page title based on current view
+  useEffect(() => {
+    if (currentView === 'projects') {
+      document.title = 'All Projects & Case Studies — Afif Ramadhan';
+    } else if (currentView === 'contact') {
+      document.title = 'Get in Touch & Inquiries — Afif Ramadhan';
+    } else {
+      document.title = 'Afif Ramadhan — Fullstack Developer & AI Automation Engineer';
+    }
+  }, [currentView]);
+
   // Keep navigation in sync with browser URL history without page reload
   useEffect(() => {
     const handlePopState = () => {

@@ -1,0 +1,88 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with subtle dark gradient -->
+  <rect width="1200" height="630" fill="#09090B"/>
+  
+  <!-- Subtle Radial Glow Background -->
+  <radialGradient id="glow" cx="0.5" cy="0.4" r="0.6" fx="0.5" fy="0.4">
+    <stop offset="0%" stop-color="#1E293B" stop-opacity="0.6"/>
+    <stop offset="100%" stop-color="#09090B" stop-opacity="1"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Subtle Grid Pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#27272A" stroke-width="0.75" stroke-opacity="0.35"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Outer Border Frame -->
+  <rect x="24" y="24" width="1152" height="582" rx="28" stroke="#27272A" stroke-width="1.5" fill="none"/>
+
+  <!-- Top Header Section -->
+  <g transform="translate(80, 80)">
+    <!-- Available for work badge -->
+    <rect x="0" y="0" width="180" height="34" rx="17" fill="#18181B" stroke="#27272A" stroke-width="1"/>
+    <circle cx="18" cy="17" r="4" fill="#22C55E"/>
+    <text x="32" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', sans-serif" font-size="12" font-weight="600" fill="#A1A1AA" letter-spacing="0.06em">AVAILABLE FOR WORK</text>
+
+    <!-- Location on the right -->
+    <text x="1040" y="22" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="500" fill="#71717A" letter-spacing="0.1em">INDONESIA (UTC+7) • REMOTE WORLDWIDE</text>
+  </g>
+
+  <!-- Main Hero Content -->
+  <g transform="translate(80, 200)">
+    <!-- Name Tag -->
+    <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="600" fill="#3B82F6" letter-spacing="0.2em">AFIF RAMADHAN</text>
+    
+    <!-- Main Headline (Crisp 2-Line) -->
+    <text x="0" y="65" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', sans-serif" font-size="52" font-weight="700" fill="#FFFFFF" letter-spacing="-0.03em">
+      Fullstack Developer &amp;
+    </text>
+    <text x="0" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', sans-serif" font-size="52" font-weight="700" fill="#94A3B8" letter-spacing="-0.03em">
+      AI Automation Engineer.
+    </text>
+
+    <!-- Subtitle Narrative -->
+    <text x="0" y="195" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="20" font-weight="400" fill="#A1A1AA">
+      Architecting scalable web applications, SaaS platforms, and autonomous AI workflows.
+    </text>
+  </g>
+
+  <!-- Bottom Badges & Domain -->
+  <g transform="translate(80, 520)">
+    <!-- Tech Stack Pill Group -->
+    <g transform="translate(0, 0)">
+      <!-- React -->
+      <rect x="0" y="0" width="76" height="34" rx="8" fill="#18181B" stroke="#27272A" stroke-width="1"/>
+      <text x="38" y="21" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13" font-weight="500" fill="#E4E4E7">React</text>
+
+      <!-- Next.js -->
+      <rect x="86" y="0" width="86" height="34" rx="8" fill="#18181B" stroke="#27272A" stroke-width="1"/>
+      <text x="129" y="21" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13" font-weight="500" fill="#E4E4E7">Next.js</text>
+
+      <!-- TypeScript -->
+      <rect x="182" y="0" width="108" height="34" rx="8" fill="#18181B" stroke="#27272A" stroke-width="1"/>
+      <text x="236" y="21" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13" font-weight="500" fill="#E4E4E7">TypeScript</text>
+
+      <!-- Laravel -->
+      <rect x="300" y="0" width="86" height="34" rx="8" fill="#18181B" stroke="#27272A" stroke-width="1"/>
+      <text x="343" y="21" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13" font-weight="500" fill="#E4E4E7">Laravel</text>
+
+      <!-- n8n Automation -->
+      <rect x="396" y="0" width="138" height="34" rx="8" fill="#18181B" stroke="#27272A" stroke-width="1"/>
+      <text x="465" y="21" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13" font-weight="500" fill="#E4E4E7">n8n Automation</text>
+
+      <!-- PostgreSQL -->
+      <rect x="544" y="0" width="108" height="34" rx="8" fill="#18181B" stroke="#27272A" stroke-width="1"/>
+      <text x="598" y="21" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="13" font-weight="500" fill="#E4E4E7">PostgreSQL</text>
+    </g>
+
+    <!-- Domain on Right -->
+    <g transform="translate(1040, 0)">
+      <rect x="-210" y="0" width="210" height="34" rx="17" fill="#18181B" stroke="#27272A" stroke-width="1"/>
+      <text x="-105" y="22" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="600" fill="#FFFFFF" letter-spacing="0.04em">afiframadhan.my.id ↗</text>
+    </g>
+  </g>
+</svg>
